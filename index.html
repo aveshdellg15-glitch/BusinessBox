@@ -6,6 +6,7 @@
   <title>BusinessBox — Start & Run Your Business From One Dashboard</title>
   <meta name="description" content="Premium business-in-a-box systems for cleaners, beauty pros, photographers, trainers, freelancers and social media managers. Pricing, CRM, invoices, marketing, launch plans and more." />
   <meta name="theme-color" content="#07111f" />
+  <!-- Supabase authentication enabled: configure /supabase-config.js -->
   <link rel="canonical" href="https://bizstacks.co.za/" />
   <meta property="og:url" content="https://bizstacks.co.za/" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -307,6 +308,21 @@
       body{background:white;color:black}
       #toolkit{padding:0}.toolkit-shell{border:0;box-shadow:none}.tool-content{display:block}.output-side{background:white;padding:0}
     }
+  
+    /* ---------- Supabase authentication ---------- */
+    .auth-form{display:grid;gap:12px;margin-top:16px}
+    .auth-row{display:grid;gap:6px}
+    .auth-row label{margin:0;font-size:12px;color:#b9c3ce;font-weight:750}
+    .auth-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:3px}
+    .auth-message{min-height:20px;font-size:13px;color:#9facba;margin-top:6px}
+    .auth-message.error{color:var(--danger)}
+    .auth-message.success{color:var(--success)}
+    .auth-link{border:0;background:transparent;color:var(--gold2);padding:0;font-size:12px;text-decoration:underline;text-underline-offset:3px}
+    .auth-divider{height:1px;background:var(--line);margin:4px 0}
+    .nav-user{display:flex;align-items:center;gap:8px}
+    .nav-user-email{max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#9ba7b5;font-size:12px}
+    .btn[disabled]{opacity:.55;cursor:not-allowed;transform:none!important}
+
   </style>
   <script type="application/ld+json">
   {
@@ -333,8 +349,8 @@
         <a href="#pricing">Pricing</a>
       </div>
       <div class="nav-cta">
-        <button class="btn ghost small" data-open="login">Log in</button>
-        <a class="btn primary small" href="#pricing">Get started</a>
+        <button class="btn ghost small" id="navLoginBtn" data-open="login">Log in</button>
+        <a class="btn primary small" id="navPrimaryBtn" href="#pricing">Get started</a>
       </div>
     </nav>
   </div>
@@ -725,6 +741,10 @@
     </div>
   </div>
   <div class="toast" id="toast">Copied</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/supabase-config.js"></script>
+
 
   <script>
     // ============================================================
@@ -1206,6 +1226,233 @@ BUSINESS: ${ind}`;
     }
 
     const modal=document.getElementById("modal"), modalTitle=document.getElementById("modalTitle"), modalBody=document.getElementById("modalBody");
+
+    // ============================================================
+    // REAL SUPABASE AUTH
+    // ============================================================
+    const AUTH_REDIRECT = () => `${window.location.origin}/dashboard.html`;
+    const RESET_REDIRECT = () => `${window.location.origin}/reset-password.html`;
+
+    function authConfigured(){
+      return Boolean(window.BIZSTACKS_SUPABASE_CONFIGURED && window.supabaseClient);
+    }
+
+    function authErrorMessage(){
+      return `Supabase is ready in the code, but the Project URL and Publishable Key still need to be pasted into supabase-config.js.`;
+    }
+
+    function setAuthMessage(id, message, type=""){
+      const el=document.getElementById(id);
+      if(!el) return;
+      el.textContent=message;
+      el.className="auth-message"+(type?` ${type}`:"");
+    }
+
+    function openSignupModal(){
+      openModal("Create your account", `
+        <p>Create your free BizStacks preview account. Email confirmation is supported.</p>
+        <div class="auth-form">
+          <div class="auth-row">
+            <label for="signupName">Full name</label>
+            <input id="signupName" autocomplete="name" placeholder="Your name">
+          </div>
+          <div class="auth-row">
+            <label for="signupEmail">Email</label>
+            <input id="signupEmail" type="email" autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div class="auth-row">
+            <label for="signupPassword">Password</label>
+            <input id="signupPassword" type="password" minlength="8" autocomplete="new-password" placeholder="At least 8 characters">
+          </div>
+          <div class="auth-actions">
+            <button class="btn primary" id="signupSubmit" type="button" onclick="signUpUser()">Create account</button>
+            <button class="auth-link" type="button" onclick="openLoginModal()">Already have an account?</button>
+          </div>
+          <div id="signupMessage" class="auth-message" aria-live="polite"></div>
+        </div>
+      `);
+      setTimeout(()=>document.getElementById("signupName")?.focus(),0);
+    }
+
+    async function signUpUser(){
+      if(!authConfigured()){
+        setAuthMessage("signupMessage",authErrorMessage(),"error");
+        return;
+      }
+
+      const name=document.getElementById("signupName")?.value.trim()||"";
+      const email=document.getElementById("signupEmail")?.value.trim()||"";
+      const password=document.getElementById("signupPassword")?.value||"";
+      const btn=document.getElementById("signupSubmit");
+
+      if(!name){setAuthMessage("signupMessage","Enter your full name.","error");return}
+      if(!email || !email.includes("@")){setAuthMessage("signupMessage","Enter a valid email address.","error");return}
+      if(password.length<8){setAuthMessage("signupMessage","Use at least 8 characters for your password.","error");return}
+
+      if(btn){btn.disabled=true;btn.textContent="Creating account…"}
+      setAuthMessage("signupMessage","Creating your account…");
+
+      const {data,error}=await window.supabaseClient.auth.signUp({
+        email,
+        password,
+        options:{
+          data:{full_name:name},
+          emailRedirectTo:AUTH_REDIRECT()
+        }
+      });
+
+      if(error){
+        setAuthMessage("signupMessage",error.message,"error");
+        if(btn){btn.disabled=false;btn.textContent="Create account"}
+        return;
+      }
+
+      if(data?.session){
+        setAuthMessage("signupMessage","Account created. Opening your dashboard…","success");
+        setTimeout(()=>window.location.href="/dashboard.html",650);
+      }else{
+        setAuthMessage("signupMessage","Account created. Check your email and click the confirmation link.","success");
+        if(btn){btn.textContent="Check your email";btn.disabled=true}
+      }
+    }
+
+    function openLoginModal(){
+      openModal("Member login", `
+        <p>Log in to your BizStacks workspace.</p>
+        <div class="auth-form">
+          <div class="auth-row">
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div class="auth-row">
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Your password">
+          </div>
+          <div class="auth-actions">
+            <button class="btn primary" id="loginSubmit" type="button" onclick="logInUser()">Log in</button>
+            <button class="auth-link" type="button" onclick="openForgotPasswordModal()">Forgot password?</button>
+          </div>
+          <div class="auth-divider"></div>
+          <button class="auth-link" type="button" onclick="openSignupModal()">Create a new account</button>
+          <div id="loginMessage" class="auth-message" aria-live="polite"></div>
+        </div>
+      `);
+      setTimeout(()=>document.getElementById("loginEmail")?.focus(),0);
+    }
+
+    async function logInUser(){
+      if(!authConfigured()){
+        setAuthMessage("loginMessage",authErrorMessage(),"error");
+        return;
+      }
+
+      const email=document.getElementById("loginEmail")?.value.trim()||"";
+      const password=document.getElementById("loginPassword")?.value||"";
+      const btn=document.getElementById("loginSubmit");
+
+      if(!email || !password){
+        setAuthMessage("loginMessage","Enter your email and password.","error");
+        return;
+      }
+
+      if(btn){btn.disabled=true;btn.textContent="Logging in…"}
+      const {error}=await window.supabaseClient.auth.signInWithPassword({email,password});
+
+      if(error){
+        setAuthMessage("loginMessage",error.message,"error");
+        if(btn){btn.disabled=false;btn.textContent="Log in"}
+        return;
+      }
+
+      setAuthMessage("loginMessage","Logged in. Opening your dashboard…","success");
+      setTimeout(()=>window.location.href="/dashboard.html",450);
+    }
+
+    function openForgotPasswordModal(){
+      openModal("Reset password", `
+        <p>Enter your account email. We’ll send the password-reset link through Supabase.</p>
+        <div class="auth-form">
+          <div class="auth-row">
+            <label for="resetEmail">Email</label>
+            <input id="resetEmail" type="email" autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div class="auth-actions">
+            <button class="btn primary" id="resetSubmit" type="button" onclick="sendPasswordReset()">Send reset link</button>
+            <button class="auth-link" type="button" onclick="openLoginModal()">Back to login</button>
+          </div>
+          <div id="resetMessage" class="auth-message" aria-live="polite"></div>
+        </div>
+      `);
+      setTimeout(()=>document.getElementById("resetEmail")?.focus(),0);
+    }
+
+    async function sendPasswordReset(){
+      if(!authConfigured()){
+        setAuthMessage("resetMessage",authErrorMessage(),"error");
+        return;
+      }
+
+      const email=document.getElementById("resetEmail")?.value.trim()||"";
+      const btn=document.getElementById("resetSubmit");
+      if(!email || !email.includes("@")){
+        setAuthMessage("resetMessage","Enter a valid email address.","error");
+        return;
+      }
+      if(btn){btn.disabled=true;btn.textContent="Sending…"}
+
+      const {error}=await window.supabaseClient.auth.resetPasswordForEmail(email,{
+        redirectTo:RESET_REDIRECT()
+      });
+
+      if(error){
+        setAuthMessage("resetMessage",error.message,"error");
+        if(btn){btn.disabled=false;btn.textContent="Send reset link"}
+        return;
+      }
+      setAuthMessage("resetMessage","Reset email sent. Check your inbox.","success");
+      if(btn) btn.textContent="Email sent";
+    }
+
+    async function logOutUser(){
+      if(window.supabaseClient){
+        await window.supabaseClient.auth.signOut();
+      }
+      window.location.href="/";
+    }
+
+    async function updateHomepageAuthState(){
+      if(!authConfigured()) return;
+
+      const {data:{session}}=await window.supabaseClient.auth.getSession();
+      const loginBtn=document.getElementById("navLoginBtn");
+      const primary=document.getElementById("navPrimaryBtn");
+
+      if(session?.user){
+        if(loginBtn){
+          loginBtn.textContent="Log out";
+          loginBtn.removeAttribute("data-open");
+          loginBtn.onclick=logOutUser;
+        }
+        if(primary){
+          primary.textContent="Dashboard";
+          primary.href="/dashboard.html";
+        }
+
+        document.querySelectorAll('[data-open="signup"]').forEach(btn=>{
+          btn.textContent="Open dashboard";
+          btn.removeAttribute("data-open");
+          btn.onclick=()=>window.location.href="/dashboard.html";
+        });
+      }
+
+      window.supabaseClient.auth.onAuthStateChange((event,newSession)=>{
+        if(event==="SIGNED_IN" && newSession?.user){
+          if(loginBtn){loginBtn.textContent="Log out";loginBtn.onclick=logOutUser}
+          if(primary){primary.textContent="Dashboard";primary.href="/dashboard.html"}
+        }
+      });
+    }
+
     function openModal(title,html){modalTitle.textContent=title;modalBody.innerHTML=html;modal.classList.add("open")}
     function closeModal(){modal.classList.remove("open")}
     document.getElementById("closeModal").onclick=closeModal;modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
@@ -1215,7 +1462,8 @@ BUSINESS: ${ind}`;
       openModal(name,`<p><b style="color:#f8f2e4">${name}</b> is already represented in the product structure. For production, connect this preview to either a dedicated product page/modal or directly to your one-time checkout.</p><p>This build intentionally avoids fake payment processing.</p><button class="btn primary" onclick="document.getElementById('pricing').scrollIntoView();closeModal()">See membership</button>`);
     }));
     document.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>{
-      openModal(b.dataset.open==="login"?"Member login":"Create your account",`<p>Authentication is not connected in the static MVP. Add an auth provider and database before collecting real customer data.</p><p class="tiny">Recommended production flow: sign in → entitlement check → dashboard → gated downloads/tools → billing portal.</p>`);
+      if(b.dataset.open==="login"){openLoginModal();return}
+      if(b.dataset.open==="signup"){openSignupModal();return}
     }));
 
     document.querySelectorAll(".checkout").forEach(btn=>btn.addEventListener("click",()=>{
@@ -1235,6 +1483,7 @@ BUSINESS: ${ind}`;
 
     document.getElementById("year").textContent=new Date().getFullYear();
     calcPrice();
+    updateHomepageAuthState();
   </script>
 </body>
 </html>
