@@ -11,316 +11,42 @@
 button,input,select,textarea{font:inherit}.shell{min-height:100vh}.topbar{height:70px;border-bottom:1px solid var(--line);background:rgba(7,17,31,.85);backdrop-filter:blur(16px);display:flex;align-items:center;position:sticky;top:0;z-index:10}.topbar-inner{width:min(1180px,calc(100% - 28px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:850;display:flex;gap:10px;align-items:center}.mark{width:35px;height:35px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#07111f}.top-actions{display:flex;gap:8px;align-items:center}.btn{border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--cream);border-radius:12px;padding:10px 14px;font-weight:750;cursor:pointer}.btn.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#07111f;border:0}.btn.danger{color:#ffc2c2}.btn:disabled{opacity:.55;cursor:not-allowed}.page{width:min(1180px,calc(100% - 28px));margin:0 auto;padding:38px 0 70px}.hero{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:24px}.eyebrow{color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:850}.hero h1{font-size:clamp(32px,5vw,54px);letter-spacing:-.05em;margin:8px 0}.muted{color:var(--muted)}.plan{display:inline-flex;padding:7px 10px;border:1px solid rgba(217,180,111,.25);border-radius:999px;color:var(--gold2);font-size:12px;font-weight:800;background:rgba(217,180,111,.07)}.business-bar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:20px}.business-bar select{min-width:260px}.field,input,select,textarea{width:100%;border:1px solid var(--line);background:#0b1727;color:white;border-radius:12px;padding:11px 12px;outline:none}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{border:1px solid var(--line);background:rgba(255,255,255,.027);border-radius:20px;padding:20px}.metric span{display:block;color:#7f8d9c;text-transform:uppercase;letter-spacing:.09em;font-size:10px}.metric strong{display:block;font-size:28px;letter-spacing:-.04em;margin-top:7px}.section{margin-top:24px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px}.section h2{font-size:20px;margin:0}.quick-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.quick{border:1px solid var(--line);background:rgba(255,255,255,.022);border-radius:16px;padding:15px;text-align:left;cursor:pointer;color:var(--cream)}.quick b{display:block;margin-bottom:5px}.quick small{color:#8392a2}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px}.table{width:100%;border-collapse:collapse;min-width:650px}.table th,.table td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);font-size:13px}.table th{color:#8796a6;font-size:10px;text-transform:uppercase;letter-spacing:.08em}.empty{text-align:center;padding:30px;color:#8190a0}.modal{position:fixed;inset:0;background:rgba(0,0,0,.67);display:none;align-items:center;justify-content:center;padding:18px;z-index:30}.modal.open{display:flex}.modal-card{width:min(540px,100%);max-height:90vh;overflow:auto;background:#0c192a;border:1px solid var(--line);border-radius:22px;padding:22px}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:15px}.modal-head h3{margin:0}.form{display:grid;gap:12px;margin-top:18px}.form label{display:grid;gap:6px;color:#b7c1cd;font-size:12px}.message{min-height:20px;font-size:13px;color:var(--muted)}.message.error{color:var(--danger)}.message.success{color:var(--success)}.setup{border:1px solid rgba(255,157,157,.25);background:rgba(255,157,157,.06);padding:16px;border-radius:16px;color:#ffc9c9}.hidden{display:none!important}
 @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.quick-grid{grid-template-columns:1fr 1fr}.hero{display:block}}
 @media(max-width:560px){.grid,.quick-grid{grid-template-columns:1fr}.business-bar select{min-width:0}.user-email{display:none}}
+
+a{color:var(--gold2);text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}.business-bar select{width:auto;flex:1}.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.toolbar select{width:auto}.usage{display:block;color:var(--gold2);margin-top:12px;font-size:13px}.quick.at-limit{border-color:var(--gold)}.intro{margin-bottom:22px;line-height:1.6}.template-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.template-grid .card{display:flex;flex-direction:column;gap:10px}.template-grid p{flex:1;line-height:1.5;margin:0}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.tabs .active{border-color:var(--gold);color:var(--gold2)}.modal-card{width:min(740px,100%)}.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form textarea{min-height:105px}.record-actions{white-space:nowrap}.record-actions button{font-size:12px;padding:7px 9px}.help{line-height:1.55;font-size:13px;color:var(--muted)}.notice{border-left:3px solid var(--gold);padding:10px 16px;background:rgba(217,180,111,.06);margin:15px 0}.check-row{display:flex;gap:10px;align-items:flex-start;margin:10px 0}.check-row input{width:20px;margin-top:4px}.quote-line{display:grid;grid-template-columns:2fr .7fr 1fr auto;gap:8px;margin-bottom:8px}.quote-line input{min-width:0}.busy{opacity:.7}.error{color:var(--danger)}#printArea{display:none}.section{scroll-margin-top:90px}.table td{max-width:330px;overflow-wrap:anywhere}.page-message{white-space:pre-wrap}.btn{display:inline-block}.topbar{height:auto;min-height:70px}.topbar-inner{padding:10px 0}
+@media(max-width:700px){.template-grid,.pair{grid-template-columns:1fr}.business-bar select{width:100%;flex-basis:100%}.quote-line{grid-template-columns:1fr 1fr}.quote-line input:first-child{grid-column:1/-1}.hero h1{font-size:32px}.top-actions{flex-wrap:wrap;justify-content:flex-end}.section-head{flex-wrap:wrap}}
+@media print{body{background:white;color:#111}body>*{display:none!important}#printArea{display:block!important;font:14px Arial,sans-serif;white-space:pre-wrap;line-height:1.6;margin:20px}.print-heading{font-size:24px}a{color:#111}}
 </style>
 </head>
 <body>
 <div class="shell">
-  <div class="topbar">
-    <div class="topbar-inner">
-      <a href="/" class="brand" style="color:inherit;text-decoration:none"><span class="mark">B</span>BizStacks</a>
-      <div class="top-actions">
-        <span class="muted user-email" id="userEmail"></span>
-        <button class="btn danger" onclick="logout()">Log out</button>
-      </div>
-    </div>
-  </div>
-
-  <main class="page">
-    <div id="configWarning" class="setup hidden">Supabase is not configured yet. Open <b>supabase-config.js</b> and paste your Project URL + Publishable Key.</div>
-
-    <div id="appContent" class="hidden">
-      <div class="hero">
-        <div>
-          <span class="eyebrow">Your workspace</span>
-          <h1 id="welcomeTitle">Welcome back.</h1>
-          <p class="muted">Your business data is protected by your Supabase account and row-level security.</p>
-        </div>
-        <span class="plan" id="planBadge">Free</span>
-      </div>
-
-      <div class="business-bar">
-        <select id="businessSelect" onchange="selectBusiness(this.value)"></select>
-        <button class="btn primary" id="addBusinessBtn" onclick="openCreateBusiness()">+ Add business</button>
-        <a class="btn" href="/#toolkit">Business tools</a>
-        <a class="btn" href="/#pricing">View plans</a>
-      </div>
-
-      <p id="planUsage" class="muted" role="status"></p>
-
-      <div id="noBusiness" class="card hidden">
-        <h2 style="margin-top:0">Create your first business</h2>
-        <p class="muted">Create a business with full access to clients, leads, jobs, invoices, expenses and the business tools.</p>
-        <button class="btn primary" onclick="openCreateBusiness()">Create business</button>
-      </div>
-
-      <div id="businessContent" class="hidden">
-        <div class="grid">
-          <div class="card metric"><span>Clients</span><strong id="metricClients">0</strong></div>
-          <div class="card metric"><span>Open leads</span><strong id="metricLeads">0</strong></div>
-          <div class="card metric"><span>Invoice value</span><strong id="metricInvoices">R 0</strong></div>
-          <div class="card metric"><span>Expenses</span><strong id="metricExpenses">R 0</strong></div>
-        </div>
-
-        <section class="section">
-          <div class="section-head"><h2>Quick add</h2></div>
-          <div class="quick-grid">
-            <button class="quick" onclick="openEntity('client')"><b>+ Client</b><small>Save customer details</small></button>
-            <button class="quick" onclick="openEntity('lead')"><b>+ Lead</b><small>Track an opportunity</small></button>
-            <button class="quick" onclick="openEntity('job')"><b>+ Job</b><small>Schedule work</small></button>
-            <button class="quick" onclick="openEntity('invoice')"><b>+ Invoice</b><small>Record an invoice</small></button>
-            <button class="quick" onclick="openEntity('expense')"><b>+ Expense</b><small>Track a cost</small></button>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="section-head"><h2>Recent activity</h2><button class="btn" onclick="loadDashboard()">Refresh</button></div>
-          <div class="table-wrap">
-            <table class="table">
-              <thead><tr><th>Type</th><th>Name / description</th><th>Status</th><th>Amount</th><th>Date</th></tr></thead>
-              <tbody id="activityRows"></tbody>
-            </table>
-          </div>
-        </section>
-      </div>
-    </div>
-  </main>
-</div>
-
-<div class="modal" id="modal">
-  <div class="modal-card">
-    <div class="modal-head"><h3 id="modalTitle"></h3><button class="btn" onclick="closeModal()">×</button></div>
-    <div id="modalBody"></div>
-  </div>
-</div>
-
+<header class="topbar"><div class="topbar-inner"><a href="/" class="brand"><span class="mark">B</span>BizStacks</a><div class="top-actions"><span id="userEmail" class="user-email muted"></span><a class="btn" href="/#pricing">Plans</a><button class="btn" onclick="logout()">Log out</button></div></div></header>
+<main class="page">
+<p id="pageMessage" class="message page-message" role="status">Opening your workspace…</p>
+<div id="appContent" class="hidden">
+<div class="hero"><div><span class="eyebrow">Your business, organised</span><h1 id="welcomeTitle">Welcome back.</h1><p class="muted">Manage your saved records and create documents for your customers.</p></div><span class="plan" id="planBadge">Checking plan…</span></div>
+<div class="business-bar"><label for="businessSelect">Your business</label><select id="businessSelect" onchange="selectBusiness(this.value)"></select><button class="btn primary" id="addBusinessBtn" onclick="openCreateBusiness()">+ Add business</button><a class="btn" href="/#boxes">Browse business types</a></div>
+<p id="planUsage" class="muted" role="status"></p>
+<div id="noBusiness" class="card hidden"><h2>Create your first business</h2><p class="muted">Choose a business type and give it a name. Then add a customer or job, or start with an editable quote.</p><button class="btn primary" onclick="openCreateBusiness()">Create business</button></div>
+<div id="businessContent" class="hidden">
+<div class="card intro"><strong id="workspaceName"></strong><p id="workspaceIntro" class="muted"></p><div class="toolbar"><a class="btn" href="#quickAdd">1. Add a record</a><a class="btn" href="#templates">2. Use a template</a><a class="btn" href="#records">3. Manage saved work</a><a class="btn" href="/#toolkit">Calculators &amp; drafting tools</a></div></div>
+<section class="section" id="quickAdd"><div class="section-head"><h2>Quick add</h2><button class="btn" onclick="refreshWorkspace()">Refresh usage</button></div><p class="help">Each type has its own limit in this business. Completed jobs and paid invoices still count. These limits do not reset monthly.</p><div class="quick-grid">
+<button class="quick" id="quick-client" onclick="openEntity('client')"><b>+ Client</b><small>Customer names and contact details</small><span id="usage-client" class="usage">Loading…</span></button><button class="quick" id="quick-lead" onclick="openEntity('lead')"><b>+ Lead</b><small>Potential customers and follow-ups</small><span id="usage-lead" class="usage">Loading…</span></button><button class="quick" id="quick-job" onclick="openEntity('job')"><b>+ Job</b><small>Bookings, dates and progress</small><span id="usage-job" class="usage">Loading…</span></button><button class="quick" id="quick-invoice" onclick="openEntity('invoice')"><b>+ Invoice</b><small>Amounts, due dates and payment status</small><span id="usage-invoice" class="usage">Loading…</span></button><button class="quick" id="quick-expense" onclick="openEntity('expense')"><b>+ Expense</b><small>Costs, categories and dates</small><span id="usage-expense" class="usage">Loading…</span></button></div></section>
+<section class="section" id="templates"><div class="section-head"><h2>Templates for this business</h2></div><p class="help">Edit the starting content, save it to this workspace, then reopen, download or print it. Your templates use your business name and category; you can change every detail.</p><div class="template-grid">
+<article class="card"><h3>Quote builder</h3><p class="muted">Add your customer, services, quantities and rates. Totals calculate automatically.</p><button class="btn primary" onclick="openDocument('quote')">Create a quote</button></article>
+<article class="card"><h3 id="checklistLabel">Work checklist</h3><p class="muted">Start with relevant tasks, edit the list and tick off completed work. Save a separate checklist for each job.</p><button class="btn" onclick="openDocument('checklist')">Create a checklist</button></article>
+<article class="card"><h3>Customer message</h3><p class="muted">Edit a booking confirmation, quote follow-up or review request. Copy the message to send it yourself.</p><button class="btn" onclick="openDocument('message')">Draft a message</button></article>
+<article class="card"><h3>Booking / job tracker</h3><p class="muted">Record the customer, location, appointment date and job status. Uses your Jobs allowance.</p><button class="btn" onclick="showRecords('job')">Open bookings</button></article>
+<article class="card"><h3>Expense tracker</h3><p class="muted">Record costs and categories, edit saved expenses and export your records. Uses your Expenses allowance.</p><button class="btn" onclick="showRecords('expense')">Open expenses</button></article>
+<article class="card"><h3>Planning studio</h3><p class="muted">13 calculators and drafting tools for pricing, profit, proposals, sales messages and launch planning.</p><a class="btn" href="/#toolkit">Open planning tools</a></article>
+</div></section>
+<section class="section" id="records"><div class="section-head"><h2>Saved records</h2><button class="btn" id="exportRecordsBtn" onclick="exportRecords()">Download CSV</button></div><div class="tabs" id="recordTabs"></div><p id="recordSummary" class="help" role="status"></p><div class="table-wrap"><table class="table"><thead><tr><th>Record</th><th>Status / category</th><th>Amount</th><th>Date</th><th>Actions</th></tr></thead><tbody id="recordRows"></tbody></table></div><div class="toolbar" style="margin-top:12px"><button class="btn" id="recordsPrev" onclick="changeRecordPage(-1)">Previous</button><span id="recordPage" class="muted"></span><button class="btn" id="recordsNext" onclick="changeRecordPage(1)">Next</button></div></section>
+<section class="section"><div class="section-head"><h2>Saved quotes, checklists &amp; messages</h2><button class="btn" onclick="loadDocuments()">Refresh</button></div><p class="help">These documents are included in every plan without a plan-based record limit. Invoices belong in Saved records above.</p><div id="documentList" class="card"></div><div class="toolbar" style="margin-top:12px"><button class="btn" id="documentsPrev" onclick="changeDocumentPage(-1)">Previous</button><span id="documentPage" class="muted"></span><button class="btn" id="documentsNext" onclick="changeDocumentPage(1)">Next</button></div></section>
+</div></div></main></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><div class="modal-head"><h2 id="modalTitle"></h2><button class="btn" aria-label="Close dialog" onclick="closeModal()">×</button></div><div id="modalBody"></div></div></div>
+<div id="printArea"></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/supabase-config.js"></script>
-<script>
-let currentUser=null;
-let currentBusinessId=null;
-let businesses=[];
-let currentPlan="free";
-let planReady=false;
-let creatingBusiness=false;
-const PLAN_RULES={
-  free:{name:"Free",limit:1},
-  business:{name:"Business",limit:3},
-  pro:{name:"Business Pro",limit:Infinity}
-};
-function resolvePlan(subscription){
-  const plan=String(subscription?.plan||"free").toLowerCase();
-  const status=String(subscription?.status||"").toLowerCase();
-  return ["active","trialing"].includes(status) && ["business","pro"].includes(plan) ? plan : "free";
-}
-function canAddBusiness(){return planReady && businesses.length<PLAN_RULES[currentPlan].limit;}
-function renderPlan(){
-  const rule=PLAN_RULES[currentPlan];
-  document.getElementById("planBadge").textContent=rule.name;
-  document.getElementById("planUsage").textContent=!planReady
-    ? "We could not check your plan. Refresh the page before adding a business."
-    : `${rule.name}: ${businesses.length}${Number.isFinite(rule.limit)?" of "+rule.limit:""} business${businesses.length===1?"":"es"} added. Full access to all business tools.`;
-  document.getElementById("addBusinessBtn").textContent=planReady && !canAddBusiness()?"Business limit reached":"+ Add business";
-}
-async function refreshPlan(){
-  const {data,error}=await window.supabaseClient.from("subscriptions").select("plan,status").eq("user_id",currentUser.id).maybeSingle();
-  planReady=!error;
-  if(!error) currentPlan=resolvePlan(data);
-  renderPlan();
-  return planReady;
-}
-function showPlanLimit(){
-  if(!planReady){openModal("Plan unavailable",'<p>We could not check your plan. Refresh the page and try again.</p>');return;}
-  const rule=PLAN_RULES[currentPlan];
-  openModal("Business limit reached",`<p>Your ${esc(rule.name)} plan includes ${rule.limit} business model${rule.limit===1?"":"s"}, with full access to the tools for each business.</p><p>${currentPlan==="free"?"Business includes up to 3 business models for R297/month.":"Business Pro includes all 150 BusinessBoxes and more business workspaces."}</p><a class="btn primary" href="/#pricing">View plans</a>`);
-}
-
-const money=n=>"R "+Number(n||0).toLocaleString("en-ZA",{maximumFractionDigits:2});
-const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
-function msg(id,text,type=""){const el=document.getElementById(id);if(el){el.textContent=text;el.className="message"+(type?` ${type}`:"")}}
-function openModal(title,body){document.getElementById("modalTitle").textContent=title;document.getElementById("modalBody").innerHTML=body;document.getElementById("modal").classList.add("open")}
-function closeModal(){document.getElementById("modal").classList.remove("open")}
-
-async function boot(){
-  if(!window.BIZSTACKS_SUPABASE_CONFIGURED || !window.supabaseClient){
-    document.getElementById("configWarning").classList.remove("hidden");
-    return;
-  }
-
-  // getUser performs an authenticated user check instead of trusting local UI state.
-  const {data:{user},error}=await window.supabaseClient.auth.getUser();
-  if(error || !user){
-    window.location.replace("/?auth=login");
-    return;
-  }
-
-  currentUser=user;
-  document.getElementById("userEmail").textContent=user.email||"";
-  document.getElementById("appContent").classList.remove("hidden");
-
-  const [{data:profile}] = await Promise.all([
-    window.supabaseClient.from("profiles").select("full_name").eq("id",user.id).maybeSingle(),
-    refreshPlan()
-  ]);
-
-  const name=profile?.full_name || user.user_metadata?.full_name || user.email?.split("@")[0] || "there";
-  document.getElementById("welcomeTitle").textContent=`Welcome, ${name}.`;
-
-
-  await loadBusinesses();
-}
-
-async function logout(){
-  await window.supabaseClient?.auth.signOut();
-  window.location.replace("/");
-}
-
-async function loadBusinesses(){
-  const {data,error}=await window.supabaseClient
-    .from("businesses")
-    .select("id,name,business_type,stage")
-    .eq("user_id",currentUser.id)
-    .order("created_at",{ascending:true});
-
-  if(error){
-    alert(error.message);
-    return;
-  }
-
-  businesses=data||[];
-  renderPlan();
-  const select=document.getElementById("businessSelect");
-
-  if(!businesses.length){
-    currentBusinessId=null;
-    select.innerHTML='<option value="">No business yet</option>';
-    document.getElementById("noBusiness").classList.remove("hidden");
-    document.getElementById("businessContent").classList.add("hidden");
-    return;
-  }
-
-  document.getElementById("noBusiness").classList.add("hidden");
-  select.innerHTML=businesses.map(b=>`<option value="${esc(b.id)}">${esc(b.name)} — ${esc(b.business_type)}</option>`).join("");
-
-  const saved=localStorage.getItem("bizstacks_business_id");
-  currentBusinessId=businesses.some(b=>b.id===saved)?saved:businesses[0].id;
-  select.value=currentBusinessId;
-  document.getElementById("businessContent").classList.remove("hidden");
-  await loadDashboard();
-}
-
-async function selectBusiness(id){
-  currentBusinessId=id||null;
-  if(id) localStorage.setItem("bizstacks_business_id",id);
-  if(id) await loadDashboard();
-}
-
-function openCreateBusiness(){
-  if(!canAddBusiness()){showPlanLimit();return;}
-  openModal("Add business",`
-    <div class="form">
-      <label>Business name<input id="newBusinessName" placeholder="e.g. Cape Clean Co."></label>
-      <label>Business type<input id="newBusinessType" placeholder="e.g. Cleaning Business"></label>
-      <label>Stage<select id="newBusinessStage"><option value="idea">Idea / planning</option><option value="launch">Launching</option><option value="trading">Already trading</option><option value="scale">Ready to scale</option></select></label>
-      <button class="btn primary" id="createBusinessBtn" onclick="createBusiness()">Create business</button>
-      <div id="businessMessage" class="message"></div>
-    </div>`);
-}
-
-async function createBusiness(){
-  if(creatingBusiness) return;
-  if(!canAddBusiness()){showPlanLimit();return;}
-  const name=document.getElementById("newBusinessName").value.trim();
-  const business_type=document.getElementById("newBusinessType").value.trim();
-  const stage=document.getElementById("newBusinessStage").value;
-  if(!name || !business_type){msg("businessMessage","Enter the business name and type.","error");return}
-  const btn=document.getElementById("createBusinessBtn");btn.disabled=true;
-  creatingBusiness=true;
-  try{
-    // Recheck after the form opens in case the subscription or another tab changed.
-    if(!await refreshPlan()){msg("businessMessage","Could not check your plan. Please try again.","error");return;}
-    const {count,error:countError}=await window.supabaseClient.from("businesses").select("id",{count:"exact",head:true}).eq("user_id",currentUser.id);
-    if(countError) throw countError;
-    if(count>=PLAN_RULES[currentPlan].limit){showPlanLimit();return;}
-    const {data,error}=await window.supabaseClient.from("businesses").insert({
-      user_id:currentUser.id,name,business_type,stage
-    }).select("id").single();
-    if(error) throw error;
-    localStorage.setItem("bizstacks_business_id",data.id);
-    closeModal();
-    await loadBusinesses();
-  }catch(error){
-    msg("businessMessage",error.message||"Could not create your business. Please try again.","error");
-  }finally{
-    creatingBusiness=false;
-    btn.disabled=false;
-  }
-}
-
-function openEntity(kind){
-  if(!currentBusinessId){return}
-  const forms={
-    client:`<label>Name<input id="fName" placeholder="Client name"></label><label>Email<input id="fEmail" type="email"></label><label>Phone<input id="fPhone"></label><label>Notes<textarea id="fNotes"></textarea></label>`,
-    lead:`<label>Lead name<input id="fName" placeholder="Lead or company"></label><label>Contact<input id="fContact"></label><label>Source<input id="fSource" placeholder="Instagram, referral, Google..."></label><label>Estimated value (R)<input id="fAmount" type="number" min="0" value="0"></label>`,
-    job:`<label>Job title<input id="fTitle" placeholder="Job / project"></label><label>Status<select id="fStatus"><option>scheduled</option><option>in_progress</option><option>completed</option><option>cancelled</option></select></label><label>Scheduled for<input id="fDate" type="datetime-local"></label><label>Amount (R)<input id="fAmount" type="number" min="0" value="0"></label>`,
-    invoice:`<label>Invoice number<input id="fNumber" placeholder="INV-001"></label><label>Description<input id="fDescription"></label><label>Amount (R)<input id="fAmount" type="number" min="0" value="0"></label><label>Status<select id="fStatus"><option>draft</option><option>sent</option><option>paid</option><option>overdue</option><option>cancelled</option></select></label><label>Due date<input id="fDate" type="date"></label>`,
-    expense:`<label>Description<input id="fDescription"></label><label>Category<input id="fCategory" placeholder="Travel, software, materials..."></label><label>Amount (R)<input id="fAmount" type="number" min="0" value="0"></label><label>Date<input id="fDate" type="date"></label>`
-  };
-  const names={client:"Client",lead:"Lead",job:"Job",invoice:"Invoice",expense:"Expense"};
-  openModal(`Add ${names[kind]}`,`<div class="form">${forms[kind]}<button class="btn primary" id="saveEntityBtn" onclick="saveEntity('${kind}')">Save ${names[kind]}</button><div id="entityMessage" class="message"></div></div>`);
-}
-
-async function saveEntity(kind){
-  const table={client:"clients",lead:"leads",job:"jobs",invoice:"invoices",expense:"expenses"}[kind];
-  let row={business_id:currentBusinessId};
-  if(kind==="client") row={...row,name:fName.value.trim(),email:fEmail.value.trim()||null,phone:fPhone.value.trim()||null,notes:fNotes.value.trim()||null};
-  if(kind==="lead") row={...row,name:fName.value.trim(),contact:fContact.value.trim()||null,source:fSource.value.trim()||null,estimated_value:+fAmount.value||0};
-  if(kind==="job") row={...row,title:fTitle.value.trim(),status:fStatus.value,scheduled_for:fDate.value?new Date(fDate.value).toISOString():null,amount:+fAmount.value||0};
-  if(kind==="invoice") row={...row,invoice_number:fNumber.value.trim()||null,description:fDescription.value.trim()||null,amount:+fAmount.value||0,status:fStatus.value,due_date:fDate.value||null};
-  if(kind==="expense") row={...row,description:fDescription.value.trim(),category:fCategory.value.trim()||null,amount:+fAmount.value||0,expense_date:fDate.value||new Date().toISOString().slice(0,10)};
-
-  if((kind==="client"||kind==="lead")&&!row.name){msg("entityMessage","Enter a name.","error");return}
-  if(kind==="job"&&!row.title){msg("entityMessage","Enter a job title.","error");return}
-  if(kind==="expense"&&!row.description){msg("entityMessage","Enter a description.","error");return}
-
-  const btn=document.getElementById("saveEntityBtn");btn.disabled=true;
-  const {error}=await window.supabaseClient.from(table).insert(row);
-  if(error){msg("entityMessage",error.message,"error");btn.disabled=false;return}
-  closeModal();
-  await loadDashboard();
-}
-
-async function loadDashboard(){
-  if(!currentBusinessId)return;
-  const [clientsRes,leadsRes,invoicesRes,expensesRes,jobsRes]=await Promise.all([
-    window.supabaseClient.from("clients").select("id,name,status,created_at").eq("business_id",currentBusinessId).order("created_at",{ascending:false}).limit(10),
-    window.supabaseClient.from("leads").select("id,name,stage,estimated_value,created_at").eq("business_id",currentBusinessId).order("created_at",{ascending:false}).limit(10),
-    window.supabaseClient.from("invoices").select("id,invoice_number,description,status,amount,created_at").eq("business_id",currentBusinessId).order("created_at",{ascending:false}).limit(10),
-    window.supabaseClient.from("expenses").select("id,description,category,amount,expense_date,created_at").eq("business_id",currentBusinessId).order("created_at",{ascending:false}).limit(10),
-    window.supabaseClient.from("jobs").select("id,title,status,amount,scheduled_for,created_at").eq("business_id",currentBusinessId).order("created_at",{ascending:false}).limit(10)
-  ]);
-
-  const anyError=[clientsRes,leadsRes,invoicesRes,expensesRes,jobsRes].find(r=>r.error)?.error;
-  if(anyError){console.error(anyError);return}
-
-  const clients=clientsRes.data||[],leads=leadsRes.data||[],invoices=invoicesRes.data||[],expenses=expensesRes.data||[],jobs=jobsRes.data||[];
-  document.getElementById("metricClients").textContent=clients.length;
-  document.getElementById("metricLeads").textContent=leads.filter(x=>!["won","lost"].includes(x.stage)).length;
-  document.getElementById("metricInvoices").textContent=money(invoices.reduce((s,x)=>s+Number(x.amount||0),0));
-  document.getElementById("metricExpenses").textContent=money(expenses.reduce((s,x)=>s+Number(x.amount||0),0));
-
-  const activity=[
-    ...clients.map(x=>({type:"Client",name:x.name,status:x.status||"active",amount:null,date:x.created_at})),
-    ...leads.map(x=>({type:"Lead",name:x.name,status:x.stage,amount:x.estimated_value,date:x.created_at})),
-    ...invoices.map(x=>({type:"Invoice",name:x.invoice_number||x.description||"Invoice",status:x.status,amount:x.amount,date:x.created_at})),
-    ...expenses.map(x=>({type:"Expense",name:x.description,status:x.category||"expense",amount:x.amount,date:x.expense_date||x.created_at})),
-    ...jobs.map(x=>({type:"Job",name:x.title,status:x.status,amount:x.amount,date:x.scheduled_for||x.created_at}))
-  ].sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,15);
-
-  document.getElementById("activityRows").innerHTML=activity.length?activity.map(x=>`
-    <tr><td>${esc(x.type)}</td><td>${esc(x.name)}</td><td>${esc(x.status||"")}</td><td>${x.amount==null?"—":money(x.amount)}</td><td>${x.date?new Date(x.date).toLocaleDateString("en-ZA"):"—"}</td></tr>`).join(""):`<tr><td colspan="5" class="empty">No activity yet. Use Quick add above.</td></tr>`;
-}
-
-boot();
-</script>
-</body>
-</html>
+<script src="/business-catalog.js"></script>
+<script src="/business-templates.js"></script>
+<script src="/dashboard.js"></script>
+</body></html>
