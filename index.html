@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BusinessBox — Start & Run Your Business From One Dashboard</title>
-  <meta name="description" content="Premium business-in-a-box systems for cleaners, beauty pros, photographers, trainers, freelancers and social media managers. Pricing, CRM, invoices, marketing, launch plans and more." />
+  <title>BizStacks — Start & Run Your Business From One Dashboard</title>
+  <meta name="description" content="Manage clients, leads, jobs, invoices and expenses. Create editable quotes, checklists and customer messages. Start free with one business." />
   <meta name="theme-color" content="#07111f" />
   <!-- Supabase authentication enabled: configure /supabase-config.js -->
   <link rel="canonical" href="https://bizstacks.co.za/" />
   <meta property="og:url" content="https://bizstacks.co.za/" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32x32.png" type="image/png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <meta property="og:title" content="BusinessBox — Your business, already organised." />
-  <meta property="og:description" content="Choose your business. Unlock premium tools, templates, calculators, scripts and operating systems." />
+  <meta property="og:title" content="BizStacks — Your business, already organised." />
+  <meta property="og:description" content="Manage your business records and create quotes, task checklists and customer messages. Free, Business and Pro plans with clear record limits." />
   <meta property="og:type" content="website" />
 <style>
     :root{
@@ -328,10 +328,10 @@
   {
     "@context":"https://schema.org",
     "@type":"SoftwareApplication",
-    "name":"BusinessBox",
+    "name":"BizStacks",
     "applicationCategory":"BusinessApplication",
     "operatingSystem":"Web",
-    "description":"Premium business-in-a-box dashboards, templates, generators and operating tools for service businesses.",
+    "description":"Business record tracking with editable quotes, checklists, messages and planning calculators.",
     "offers":[
       {"@type":"Offer","name":"Free","price":"0","priceCurrency":"ZAR"},
       {"@type":"Offer","name":"Business","price":"297","priceCurrency":"ZAR"},
@@ -343,10 +343,10 @@
 <body>
   <div class="nav-wrap">
     <nav class="container">
-      <a href="#" class="brand"><span class="brandmark">B</span>BusinessBox</a>
+      <a href="#" class="brand"><span class="brandmark">B</span>BizStacks</a>
       <div class="navlinks">
         <a href="#boxes">Business types</a>
-        <a href="#how">How it works</a>
+        <a href="#how">How it works</a><a href="#toolkit">Planning tools</a>
         <a href="#pricing">Pricing</a>
       </div>
       <div class="nav-cta">
@@ -359,83 +359,37 @@
   <main>
     <header class="hero clean-hero">
       <div class="container clean-hero-inner">
-        <span class="eyebrow"><span class="dot"></span> Business systems for 150 industries</span>
-        <h1>Everything your business needs. <span>In one box.</span></h1>
-        <p class="hero-copy">Choose your business and get a ready-to-use system for pricing, clients, sales, finance and day-to-day operations.</p>
+        <span class="eyebrow"><span class="dot"></span> One workspace for your small business</span>
+        <h1>Your clients, jobs and paperwork. <span>Organised.</span></h1>
+        <p class="hero-copy">Choose your business, track customers and jobs, and create quotes and checklists. Start free; upgrade when you need more room for records.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#boxes">Find my business →</a>
           <a class="btn" href="#pricing">See pricing</a>
         </div>
         <div class="clean-proof">
           <span>150 business types</span>
-          <span>46–54 premium assets</span>
+          <span>Editable quotes & checklists</span>
           <span>13 business tools</span>
         </div>
       </div>
     </header>
-</div>
 
 
-    <section id="configure" class="advanced-hidden">
-      <div class="container">
-        <div class="section-head">
-          <div class="copy">
-            <span class="kicker">Build your box</span>
-            <h2>Start with the business you actually have.</h2>
-            <p class="sub">Tell BusinessBox what you do, where you are in the journey and what matters most. The site assembles a focused premium starting stack instead of throwing 50 downloads at you.</p>
-          </div>
-          <span class="tool-count">Personalised in under 30 seconds</span>
-        </div>
-        <div class="config-shell">
-          <div class="config-form">
-            <label>Business type</label>
-            <select id="cfgIndustry"></select>
-            <label>Business stage</label>
-            <select id="cfgStage">
-              <option value="idea">Idea / planning</option>
-              <option value="launch">Launching now</option>
-              <option value="trading">Already trading</option>
-              <option value="scale">Ready to scale</option>
-            </select>
-            <label>Biggest priority</label>
-            <select id="cfgPriority">
-              <option value="customers">Find more customers</option>
-              <option value="pricing">Price for profit</option>
-              <option value="systems">Organise the business</option>
-              <option value="documents">Look more professional</option>
-              <option value="research">Validate the market</option>
-              <option value="growth">Build repeatable growth</option>
-            </select>
-            <button class="btn primary" style="margin-top:18px" onclick="buildBox()">Build my starting stack</button>
-          </div>
-          <div class="config-output">
-            <span class="kicker">Your starting system</span>
-            <h3 id="cfgTitle">Cleaning Business Launch Stack</h3>
-            <p id="cfgSummary" class="sub" style="font-size:14px">A focused set of tools to price the work, win the first customers and deliver consistently.</p>
-            <div class="stack-list" id="cfgStack">
-              <div class="stack-item"><span class="stack-icon">1</span><div><strong>Offer & Pricing System</strong><small>Define a sellable service and protect margin.</small></div></div>
-              <div class="stack-item"><span class="stack-icon">2</span><div><strong>Lead & Client Pipeline</strong><small>Track every enquiry, quote and follow-up.</small></div></div>
-              <div class="stack-item"><span class="stack-icon">3</span><div><strong>Launch & Sales Pack</strong><small>30-day plan, outreach scripts and review loop.</small></div></div>
-            </div>
-            <div class="quality-strip"><span class="check">✓</span><div><strong id="cfgPlan">Free plan: 1 business — R0</strong><p>Start free with full access to one business model. Business includes three business models; Pro includes all 150.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <section id="boxes">
       <div class="container">
         <div class="section-head">
           <div class="copy">
-            <span class="kicker">Find your BusinessBox</span>
+            <span class="kicker">Find your BizStacks</span>
             <h2>What business are you building?</h2>
-            <p class="sub">Search 150 business types. Start with a niche-specific system instead of a blank spreadsheet.</p>
+            <p class="sub">Choose from 150 business types. Each workspace uses the same working tools, with editable starting templates based on your business category.</p>
           </div>
         </div>
 
         <div class="catalog-tools">
           <div class="catalog-search"><input id="businessSearch" type="search" placeholder="Search 150 business types — e.g. barber, electrician, tutor, web designer..."></div>
-          <span class="catalog-count" id="businessCount">150 premium business systems</span>
+          <span class="catalog-count" id="businessCount">150 business types</span>
         </div>
         <div class="category-scroll compact-categories" id="businessCategories"></div>
 
@@ -444,39 +398,12 @@
       </div>
     </section>
 
-    <section id="inside" class="advanced-hidden">
-      <div class="container">
-        <div class="section-head">
-          <div class="copy"><span class="kicker">What's inside</span><h2>Not another folder of random PDFs.</h2><p class="sub">The box is structured around the six systems a small service business needs to operate properly.</p></div>
-        </div>
-        <div class="feature-grid">
-          <div class="feature-card"><span class="num">01 / MONEY</span><h3>Price for profit</h3><p>Job costing, margin calculator, package builder, income/expense tracking, cash view and monthly profit dashboard.</p></div>
-          <div class="feature-card"><span class="num">02 / CLIENTS</span><h3>Never lose a lead</h3><p>CRM, lead status, client intake, booking tracker, follow-up schedule, review requests and referral workflow.</p></div>
-          <div class="feature-card"><span class="num">03 / SALES</span><h3>Know what to say</h3><p>WhatsApp, DM, email, follow-up, objection and closing scripts tailored to your service and customer.</p></div>
-          <div class="feature-card"><span class="num">04 / OPERATIONS</span><h3>Run the work</h3><p>Checklists, project/job tracker, recurring task system, service delivery workflow and monthly planning dashboard.</p></div>
-          <div class="feature-card"><span class="num">05 / BRAND</span><h3>Look established</h3><p>Price list, quote, invoice, onboarding documents, website copy, marketing prompts and professional client communications.</p></div>
-          <div class="feature-card"><span class="num">06 / LAUNCH</span><h3>Start with direction</h3><p>30-day launch plan, offer builder, first-customer plan, promotion checklist and weekly business priorities.</p></div>
-        </div>
-
-        <div style="margin-top:54px" class="section-head">
-          <div class="copy"><span class="kicker">From template to system</span><h2>Premium means the pieces work together.</h2><p class="sub">Every asset is designed to be configurable, reusable and easier to operate month after month — not a one-off file that gets forgotten in Downloads.</p></div>
-        </div>
-        <div class="system-grid">
-          <article class="system-card"><span class="tag">CONFIGURE</span><h3>Settings, not hard-coded files</h3><p>Editable service lists, lead sources, status options, categories and business details make the system adapt to each customer.</p></article>
-          <article class="system-card"><span class="tag">SEE</span><h3>Dashboards that show what matters</h3><p>Revenue, profit, pipeline, lead source and next actions are surfaced so owners can make decisions instead of hunting through rows.</p></article>
-          <article class="system-card"><span class="tag">ACT</span><h3>Alerts and next actions</h3><p>Follow-up dates, overdue items, outstanding invoices and upcoming jobs become action prompts rather than passive data.</p></article>
-          <article class="system-card"><span class="tag">REUSE</span><h3>Modular templates and variants</h3><p>Emails, proposals and client documents are broken into swappable modules with multiple tones and use cases instead of a single rigid version.</p></article>
-          <article class="system-card"><span class="tag">DELIVER</span><h3>Instructions and client-ready packaging</h3><p>Clear placeholders, usage guidance, professional formatting and defined inclusions reduce confusion and make each product feel finished.</p></article>
-          <article class="system-card"><span class="tag">REVIEW</span><h3>Quality gates and review loops</h3><p>Critical assumptions, formulas, market claims and high-stakes documents are flagged for checking before they become customer-facing outputs.</p></article>
-        </div>
-        <div class="quality-strip"><span class="check">✓</span><div><strong>Human-review standard</strong><p>BusinessBox should assist judgement, not replace it. Financial assumptions, market facts, contracts, tax/legal language and customer promises should be checked before use.</p></div></div>
-      </div>
-    </section>
+    
 
     <section id="toolkit" class="advanced-hidden">
       <div class="container">
         <div class="section-head">
-          <div class="copy"><span class="kicker">Business Studio</span><h2>From idea to operating decision.</h2><p class="sub">Thirteen working front-end tools cover pricing, research, offers, planning, proposals, email, resources, finance and launch. The tools produce structured first drafts — not unverified business facts.</p></div>
+          <div class="copy"><span class="kicker">Business Studio</span><h2>From idea to operating decision.</h2><p class="sub">Use 13 calculators and drafting tools for pricing, offers, proposals, messages, finance and launch planning. Drafting tools use templates and your inputs; they do not perform live research. Copy or print your results. Results here are not saved to your account.</p></div>
         </div>
 
         <div class="toolkit-shell">
@@ -583,7 +510,7 @@
                 <h3 class="tool-title">Build a conversion email</h3><p class="tool-desc">Generate a modular campaign structure with subject lines, preview text and one clear CTA.</p>
                 <label>Campaign goal</label><select id="emGoal"><option>Welcome new lead</option><option>Launch an offer</option><option>Follow up a quote</option><option>Reactivate past customers</option><option>Request a review</option></select>
                 <label>Audience</label><input id="emAudience" value="small business owners who downloaded our pricing calculator">
-                <label>Offer / action</label><input id="emOffer" value="book a 20-minute BusinessBox setup call">
+                <label>Offer / action</label><input id="emOffer" value="book a 20-minute BizStacks setup call">
                 <label>Brand tone</label><select id="emTone"><option>Premium and clear</option><option>Friendly</option><option>Authoritative</option><option>Minimal</option></select>
                 <button class="btn primary" onclick="emailCampaign()">Build email</button>
               </div>
@@ -619,24 +546,14 @@
                 <button class="btn small" onclick="copyResult()">Copy result</button>
                 <button class="btn small" id="printBtn" onclick="window.print()" style="display:none">Print / save PDF</button>
               </div>
-              <div class="studio-note"><span class="check">✓</span><p><b>Premium workflow:</b> generate a structured first draft, review the assumptions, customise the wording, verify high-stakes claims, then save the approved version to the customer workspace.</p></div><p class="tiny" style="margin-top:14px">Demo tools run locally in your browser. Production accounts should save customer data to a secure authenticated database.</p>
+              <div class="studio-note"><span class="check">✓</span><p>Review the draft, change the wording and copy or print your result.</p></div><p class="tiny" style="margin-top:14px">These planning tools do not save results automatically. Use your dashboard for saved quotes, checklists, messages and business records.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="library" class="advanced-hidden">
-      <div class="container">
-        <div class="section-head">
-          <div class="copy"><span class="kicker">Premium library</span><h2>The box behind the dashboard.</h2><p class="sub">A curated operating library instead of filler downloads. Use the filters to see what customers unlock.</p></div>
-        </div>
-        <div class="library-controls">
-          <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="strategy">Strategy</button><button class="filter" data-filter="finance">Finance</button><button class="filter" data-filter="sales">Sales</button><button class="filter" data-filter="documents">Documents</button><button class="filter" data-filter="client">Client</button><button class="filter" data-filter="marketing">Marketing</button><button class="filter" data-filter="growth">Growth</button><button class="filter" data-filter="ops">Operations</button>
-        </div>
-        <div class="asset-grid" id="assetGrid"></div>
-      </div>
-    </section>
+    
 
 
     <section id="how" class="clean-section">
@@ -657,12 +574,12 @@
           <article>
             <span>02</span>
             <h3>Open your system</h3>
-            <p>Get your pricing, CRM, documents, sales tools and operating templates.</p>
+            <p>Sign in, name your business and open its saved records and templates.</p>
           </article>
           <article>
             <span>03</span>
             <h3>Make it yours</h3>
-            <p>Change the wording, services, prices and workflows as your business grows.</p>
+            <p>Add your first client or job. Edit a quote or checklist, then save or download it.</p>
           </article>
         </div>
       </div>
@@ -671,31 +588,32 @@
     <section id="pricing">
       <div class="container">
         <div class="section-head">
-          <div class="copy"><span class="kicker">Simple pricing</span><h2>Choose how much access you need.</h2><p class="sub">Run one business free, grow to three with Business, or unlock every BusinessBox with Pro.</p></div>
+          <div class="copy"><span class="kicker">Simple pricing</span><h2>Choose how much access you need.</h2><p class="sub">Every plan includes the same tools. Choose how many businesses and saved records you need.</p></div>
         </div>
 
+        <p class="sub" style="font-size:14px">Limits apply separately to clients, leads, jobs, invoices and expenses in each business. These are saved-record limits, not monthly allowances. Quotes, checklists and messages have no plan-based limit.</p>
         <div class="annual-note"><span>Monthly</span><button class="switch" id="billingSwitch" aria-label="Toggle annual billing"><span></span></button><span>Annual <b style="color:var(--gold2)">2 months free</b></span></div>
 
         <div class="pricing-wrap">
           <article class="price-card">
-            <div class="price-name">Free</div><p class="price-desc">Everything you need to start and run one business model.</p>
+            <div class="price-name">Free</div><p class="price-desc">Try the tools with one business and a small number of saved records.</p>
             <div class="price">R0</div>
-            <ul><li>Full access to 1 business model</li><li>All business tools included</li><li>CRM, pricing, sales &amp; finance tools</li><li>No payment required</li></ul>
+            <ul><li>1 business workspace</li><li>2 clients, 2 leads and 2 jobs</li><li>2 invoices and 2 expenses</li><li>Editable quotes, checklists &amp; messages</li><li>All 13 planning tools</li><li>No payment required</li></ul>
             <button class="btn" data-open="signup">Start free</button>
           </article>
 
           <article class="price-card featured">
-            <span class="ribbon">MOST POPULAR</span>
-            <div class="price-name">Business</div><p class="price-desc">The complete operating system for up to three business models.</p>
+            <span class="ribbon">MORE ROOM</span>
+            <div class="price-name">Business</div><p class="price-desc">Manage up to three businesses with more room for each one.</p>
             <div class="price" data-monthly="297" data-annual="2970">R297<small>/mo</small></div>
-            <ul><li>Full access to 3 business models</li><li>All niche-specific templates</li><li>CRM, pricing, sales & finance tools</li><li>Ongoing updates</li></ul>
+            <ul><li>Up to 3 business workspaces</li><li>10 clients, 10 leads and 10 jobs per business</li><li>10 invoices and 10 expenses per business</li><li>Editable quotes, checklists &amp; messages</li><li>All 13 planning tools</li></ul>
             <button class="btn primary checkout" data-plan="business">Choose Business</button>
           </article>
 
           <article class="price-card">
-            <div class="price-name">Business Pro</div><p class="price-desc">For multi-offer operators, freelancers and growing teams.</p>
+            <div class="price-name">Business Pro</div><p class="price-desc">For businesses that need unlimited saved records.</p>
             <div class="price" data-monthly="597" data-annual="5970">R597<small>/mo</small></div>
-            <ul><li>Everything in Business</li><li>All 150 BusinessBoxes</li><li>Advanced planning & document tools</li><li>Multi-business workspace</li></ul>
+            <ul><li>Access to all 150 business types</li><li>Unlimited business workspaces</li><li>Unlimited clients, leads and jobs</li><li>Unlimited invoices and expenses</li><li>Editable templates &amp; all 13 planning tools</li></ul>
             <button class="btn checkout" data-plan="pro">Choose Pro</button>
           </article>
         </div>
@@ -706,10 +624,10 @@
       <div class="container faq">
         <div><span class="kicker">Questions</span><h2>Quick answers.</h2><p class="sub">The basics before you choose a plan.</p></div>
         <div>
-          <details open><summary>What do I actually get?</summary><p>A business-specific operating system with templates, trackers, calculators, scripts and workflows adapted to your industry.</p></details>
+          <details open><summary>What do I actually get?</summary><p>A saved workspace for clients, leads, jobs, invoices and expenses, plus editable quotes, checklists and customer messages. Choose a business type for relevant starting templates. You can also use 13 calculators and drafting tools.</p></details>
           <details><summary>Can I customise everything?</summary><p>Yes. The system is designed to be edited around your services, pricing, customers and way of working.</p></details>
-          <details><summary>What can I do on the Free plan?</summary><p>Run one business model with full access to the business tools, including clients, leads, jobs, invoices and expenses. Business includes up to three business models for R297/month. Business Pro includes all 150 BusinessBoxes.</p></details>
-          <details><summary>Can I cancel a subscription?</summary><p>Yes. Once billing is connected, customers can manage or cancel their subscription through the billing portal.</p></details>
+          <details><summary>What can I do on the Free plan?</summary><p>Use one business, 2 clients, 2 leads, 2 jobs, 2 invoices and 2 expenses. Quotes, checklists, messages and planning tools are included. Each record type has its own limit.</p></details>
+          <details><summary>Do my limits reset each month?</summary><p>No. Limits apply to records currently saved in each business, including completed jobs and paid invoices. Editing a record does not use another slot. Existing records stay accessible if you downgrade.</p></details><details><summary>Will this send invoices or collect payments?</summary><p>You can record and print invoices, and copy or download messages. Sending, payment collection and automatic reminders are not included.</p></details>
         </div>
       </div>
     </section>
@@ -719,8 +637,8 @@
         <div class="cta">
           <span class="kicker">Build less from scratch</span>
           <h2>Open the box. Start the business.</h2>
-          <p>Everything customers normally spend hours hunting for — organised into one premium business operating system.</p>
-          <a class="btn primary" href="#pricing">Get BusinessBox →</a>
+          <p>Keep your customer details, work schedule and paperwork together. Start with one business for free.</p>
+          <a class="btn primary" href="#pricing">Get BizStacks →</a>
         </div>
       </div>
     </section>
@@ -729,16 +647,16 @@
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <a href="#" class="brand"><span class="brandmark">B</span>BusinessBox</a>
-        <div class="footer-links"><a href="#boxes">Business types</a><a href="#pricing">Pricing</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+        <a href="#" class="brand"><span class="brandmark">B</span>BizStacks</a>
+        <div class="footer-links"><a href="#boxes">Business types</a><a href="#pricing">Pricing</a></div>
       </div>
-      <div class="legal">© <span id="year"></span> BusinessBox. Replace placeholder policies, billing links and support details before launch.</div>
+      <div class="legal">© <span id="year"></span> BizStacks. Manage your business, one step at a time.</div>
     </div>
   </footer>
 
   <div class="modal" id="modal">
     <div class="modal-card">
-      <div class="modal-head"><div><span class="kicker">BusinessBox</span><h3 id="modalTitle" style="margin:5px 0 0;font-size:26px">Coming next</h3></div><button class="close" id="closeModal">×</button></div>
+      <div class="modal-head"><div><span class="kicker">BizStacks</span><h3 id="modalTitle" style="margin:5px 0 0;font-size:26px">Coming next</h3></div><button class="close" id="closeModal">×</button></div>
       <div id="modalBody" style="color:#a7b3c0;margin-top:18px"></div>
     </div>
   </div>
@@ -746,24 +664,27 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="/supabase-config.js"></script>
+  <script src="/business-catalog.js"></script>
 
 
   <script>
     // ============================================================
-    // BUSINESSBOX CONFIG
+    // BIZSTACKS CONFIG
     // Paste public hosted checkout/payment links here.
     // Never put secret API keys in this file.
     // ============================================================
     const CHECKOUT_LINKS = {
       business: "",
+      businessAnnual: "",
       pro: "",
+      proAnnual: "",
       completeBox: "",
       proBox: "",
       agency: ""
     };
 
 
-    const BUSINESS_TYPES = [{"name": "Cleaning Business", "category": "Home & Local Services", "desc": "Residential, office and recurring cleaning operations.", "bullets": ["Job pricing & quote system", "Route / booking tracker", "Client CRM & follow-ups", "Service checklist & reviews"], "icon": "✦", "assets": 46, "popular": true, "niche": "Practical systems for quoting, routes, recurring jobs and local-client growth."}, {"name": "Airbnb Cleaning", "category": "Home & Local Services", "desc": "Turnovers, linen, restocking and host-ready quality control.", "bullets": ["Job pricing & quote system", "Route / booking tracker", "Client CRM & follow-ups", "Service checklist & reviews"], "icon": "◌", "assets": 47, "popular": false, "niche": "Practical systems for quoting, routes, recurring jobs and local-client growth."}, {"name": "Pressure Washing", "category": "Home & Local Services", "desc": "Driveways, paving, walls and exterior cleaning jobs.", "bullets": ["Job pricing & quote system", "Route / booking tracker", "Client CRM & follow-ups", "Service checklist & reviews"], "icon": "◈", "assets": 48, "popular": false, "niche": "Practical systems for quoting, routes, recurring jobs and local-client growth."}, {"name": "Window Cleaning", "category": "Home & Local Services", "desc": "Residential and commercial window-cleaning routes.", "bullets": ["Job pricing & quote system", "Route / booking tracker", "Client CRM & follow-ups", "Service checklist & reviews"], "icon": "↑", "assets": 49, "popular": false, "niche": "Practical systems for quoting, routes, recurring jobs and local-client growth."}, {"name": "Lawn Care", "category": "Home & Local Services", "desc": "Recurring mowing, edging and seasonal garden maintenance.", "bullets": ["Job pricing & quote system", "Route / booking tracker", "Client CRM & follow-ups", "Service checklist & reviews"], "icon": "⌁", "assets": 50, "popular": false, "niche": "Practical systems for quoting, routes, recurring jobs and local-client growth."}, {"name": "Landscaping", "category": "Home & Local Services", "desc": "Quoting, project planning, materials and recurring maintenance.", "bullets": ["Job pricing & quote system", "Route / booking tracker", "Client CRM & follow-ups", "Service checklist & reviews"], "icon": "◎", "assets": 51, "popular": false, "niche": "Practical systems for quoting, routes, recurring jobs and local-client growth."}, {"name": "Pool Service", "category": "Home & Local Services", "desc": "Recurring pool care, routes and service plans.", "bullets": ["Job pricing & quote system", "Route / booking tracker", "Client CRM & follow-ups", "Service checklist & reviews"], "icon": "◇", "assets": 52, "popular": false, "niche": "Practical systems for quoting, routes, recurring jobs and local-client growth."}, {"name": "Pest Control", "category": "Home & Local Services", "desc": "Inspections, bookings, service plans and follow-up workflows.", "bullets": ["Job pricing & quote system", "Route / booking tracker", "Client CRM & follow-ups", "Service checklist & reviews"], "icon": "▣", "assets": 53, "popular": false, "niche": "Practical systems for quoting, routes, recurring jobs and local-client growth."}, {"name": "Handyman Service", "category": "Home & Local Services", "desc": "Small repairs, call-outs, quoting and job tracking.", "bullets": ["Job pricing & quote system", "Route / booking tracker", "Client CRM & follow-ups", "Service checklist & reviews"], "icon": "◆", "assets": 54, "popular": false, "niche": "Practical systems for quoting, routes, recurring jobs and local-client growth."}, {"name": "Home Organising", "category": "Home & Local Services", "desc": "Consultations, room projects, packages and referrals.", "bullets": ["Job pricing & quote system", "Route / booking tracker", "Client CRM & follow-ups", "Service checklist & reviews"], "icon": "◐", "assets": 46, "popular": false, "niche": "Practical systems for quoting, routes, recurring jobs and local-client growth."}, {"name": "Nail Technician", "category": "Beauty & Wellness", "desc": "Services, appointments, rebooking and client-care workflows.", "bullets": ["Service pricing system", "Appointment & client tracker", "Rebooking / retention scripts", "Aftercare & promotion templates"], "icon": "✧", "assets": 47, "popular": true, "niche": "Premium client experience, appointments, rebooking and service profitability."}, {"name": "Hair Stylist", "category": "Beauty & Wellness", "desc": "Bookings, service menus, retail add-ons and retention.", "bullets": ["Service pricing system", "Appointment & client tracker", "Rebooking / retention scripts", "Aftercare & promotion templates"], "icon": "▦", "assets": 48, "popular": false, "niche": "Premium client experience, appointments, rebooking and service profitability."}, {"name": "Barber Shop", "category": "Beauty & Wellness", "desc": "Cuts, memberships, bookings and repeat-client growth.", "bullets": ["Service pricing system", "Appointment & client tracker", "Rebooking / retention scripts", "Aftercare & promotion templates"], "icon": "◒", "assets": 49, "popular": true, "niche": "Premium client experience, appointments, rebooking and service profitability."}, {"name": "Makeup Artist", "category": "Beauty & Wellness", "desc": "Bridal, event and shoot bookings with deposits and prep.", "bullets": ["Service pricing system", "Appointment & client tracker", "Rebooking / retention scripts", "Aftercare & promotion templates"], "icon": "⬡", "assets": 50, "popular": false, "niche": "Premium client experience, appointments, rebooking and service profitability."}, {"name": "Lash Technician", "category": "Beauty & Wellness", "desc": "Appointments, fills, aftercare and rebooking systems.", "bullets": ["Service pricing system", "Appointment & client tracker", "Rebooking / retention scripts", "Aftercare & promotion templates"], "icon": "◍", "assets": 51, "popular": false, "niche": "Premium client experience, appointments, rebooking and service profitability."}, {"name": "Brow Artist", "category": "Beauty & Wellness", "desc": "Treatments, consultations, aftercare and repeat bookings.", "bullets": ["Service pricing system", "Appointment & client tracker", "Rebooking / retention scripts", "Aftercare & promotion templates"], "icon": "✦", "assets": 52, "popular": false, "niche": "Premium client experience, appointments, rebooking and service profitability."}, {"name": "Massage Therapist", "category": "Beauty & Wellness", "desc": "Sessions, packages, scheduling and client admin.", "bullets": ["Service pricing system", "Appointment & client tracker", "Rebooking / retention scripts", "Aftercare & promotion templates"], "icon": "◌", "assets": 53, "popular": false, "niche": "Premium client experience, appointments, rebooking and service profitability."}, {"name": "Esthetician", "category": "Beauty & Wellness", "desc": "Treatments, packages, consultations and client retention.", "bullets": ["Service pricing system", "Appointment & client tracker", "Rebooking / retention scripts", "Aftercare & promotion templates"], "icon": "◈", "assets": 54, "popular": false, "niche": "Premium client experience, appointments, rebooking and service profitability."}, {"name": "Spray Tan Business", "category": "Beauty & Wellness", "desc": "Bookings, preparation, aftercare and event packages.", "bullets": ["Service pricing system", "Appointment & client tracker", "Rebooking / retention scripts", "Aftercare & promotion templates"], "icon": "↑", "assets": 46, "popular": false, "niche": "Premium client experience, appointments, rebooking and service profitability."}, {"name": "Mobile Beauty Service", "category": "Beauty & Wellness", "desc": "Travel bookings, service areas, packages and deposits.", "bullets": ["Service pricing system", "Appointment & client tracker", "Rebooking / retention scripts", "Aftercare & promotion templates"], "icon": "⌁", "assets": 47, "popular": false, "niche": "Premium client experience, appointments, rebooking and service profitability."}, {"name": "Photographer", "category": "Creative & Media", "desc": "Packages, shoots, delivery stages, deposits and referrals.", "bullets": ["Package pricing", "Project / client CRM", "Proposal & revision workflow", "Delivery & referral system"], "icon": "◎", "assets": 48, "popular": true, "niche": "Packages, projects, revisions, delivery and repeat-client growth."}, {"name": "Videographer", "category": "Creative & Media", "desc": "Projects, production schedules, revisions and delivery.", "bullets": ["Package pricing", "Project / client CRM", "Proposal & revision workflow", "Delivery & referral system"], "icon": "◇", "assets": 49, "popular": false, "niche": "Packages, projects, revisions, delivery and repeat-client growth."}, {"name": "Wedding Photographer", "category": "Creative & Media", "desc": "Enquiries, packages, timelines, galleries and referrals.", "bullets": ["Package pricing", "Project / client CRM", "Proposal & revision workflow", "Delivery & referral system"], "icon": "▣", "assets": 50, "popular": false, "niche": "Packages, projects, revisions, delivery and repeat-client growth."}, {"name": "Content Creator", "category": "Creative & Media", "desc": "Brand deals, content calendars, deliverables and invoices.", "bullets": ["Package pricing", "Project / client CRM", "Proposal & revision workflow", "Delivery & referral system"], "icon": "◆", "assets": 51, "popular": false, "niche": "Packages, projects, revisions, delivery and repeat-client growth."}, {"name": "Graphic Designer", "category": "Creative & Media", "desc": "Scopes, revisions, project profitability and handover.", "bullets": ["Package pricing", "Project / client CRM", "Proposal & revision workflow", "Delivery & referral system"], "icon": "◐", "assets": 52, "popular": false, "niche": "Packages, projects, revisions, delivery and repeat-client growth."}, {"name": "Brand Designer", "category": "Creative & Media", "desc": "Strategy, identity packages, proposals and client approvals.", "bullets": ["Package pricing", "Project / client CRM", "Proposal & revision workflow", "Delivery & referral system"], "icon": "✧", "assets": 53, "popular": false, "niche": "Packages, projects, revisions, delivery and repeat-client growth."}, {"name": "Copywriter", "category": "Creative & Media", "desc": "Briefs, content scopes, retainers and revision workflows.", "bullets": ["Package pricing", "Project / client CRM", "Proposal & revision workflow", "Delivery & referral system"], "icon": "▦", "assets": 54, "popular": false, "niche": "Packages, projects, revisions, delivery and repeat-client growth."}, {"name": "Podcast Producer", "category": "Creative & Media", "desc": "Episodes, guests, production calendars and client retainers.", "bullets": ["Package pricing", "Project / client CRM", "Proposal & revision workflow", "Delivery & referral system"], "icon": "◒", "assets": 46, "popular": false, "niche": "Packages, projects, revisions, delivery and repeat-client growth."}, {"name": "DJ Business", "category": "Creative & Media", "desc": "Events, packages, equipment, deposits and booking workflows.", "bullets": ["Package pricing", "Project / client CRM", "Proposal & revision workflow", "Delivery & referral system"], "icon": "⬡", "assets": 47, "popular": false, "niche": "Packages, projects, revisions, delivery and repeat-client growth."}, {"name": "Music Producer", "category": "Creative & Media", "desc": "Sessions, projects, licensing admin and client delivery.", "bullets": ["Package pricing", "Project / client CRM", "Proposal & revision workflow", "Delivery & referral system"], "icon": "◍", "assets": 48, "popular": false, "niche": "Packages, projects, revisions, delivery and repeat-client growth."}, {"name": "Freelancer", "category": "Professional Services", "desc": "Scope, proposal, project profitability and client onboarding.", "bullets": ["Proposal & scope system", "Client onboarding", "Retainer / project profitability", "Follow-up & renewal workflow"], "icon": "✦", "assets": 49, "popular": true, "niche": "Scope, proposals, client delivery, retainers and renewals."}, {"name": "Virtual Assistant", "category": "Professional Services", "desc": "Retainers, task tracking, time, onboarding and renewals.", "bullets": ["Proposal & scope system", "Client onboarding", "Retainer / project profitability", "Follow-up & renewal workflow"], "icon": "◌", "assets": 50, "popular": false, "niche": "Scope, proposals, client delivery, retainers and renewals."}, {"name": "Business Consultant", "category": "Professional Services", "desc": "Discovery, proposals, projects and recurring advisory work.", "bullets": ["Proposal & scope system", "Client onboarding", "Retainer / project profitability", "Follow-up & renewal workflow"], "icon": "◈", "assets": 51, "popular": false, "niche": "Scope, proposals, client delivery, retainers and renewals."}, {"name": "Bookkeeping Service", "category": "Professional Services", "desc": "Client onboarding, document collection and recurring workflows.", "bullets": ["Proposal & scope system", "Client onboarding", "Retainer / project profitability", "Follow-up & renewal workflow"], "icon": "↑", "assets": 52, "popular": false, "niche": "Scope, proposals, client delivery, retainers and renewals."}, {"name": "Accounting Practice", "category": "Professional Services", "desc": "Client admin, engagement workflows and recurring service systems.", "bullets": ["Proposal & scope system", "Client onboarding", "Retainer / project profitability", "Follow-up & renewal workflow"], "icon": "⌁", "assets": 53, "popular": false, "niche": "Scope, proposals, client delivery, retainers and renewals."}, {"name": "Business Coach", "category": "Professional Services", "desc": "Packages, sessions, goals, renewals and lead nurturing.", "bullets": ["Proposal & scope system", "Client onboarding", "Retainer / project profitability", "Follow-up & renewal workflow"], "icon": "◎", "assets": 54, "popular": false, "niche": "Scope, proposals, client delivery, retainers and renewals."}, {"name": "Career Coach", "category": "Professional Services", "desc": "Sessions, packages, resources and client progress tracking.", "bullets": ["Proposal & scope system", "Client onboarding", "Retainer / project profitability", "Follow-up & renewal workflow"], "icon": "◇", "assets": 46, "popular": false, "niche": "Scope, proposals, client delivery, retainers and renewals."}, {"name": "Resume Writing Service", "category": "Professional Services", "desc": "Packages, intake, revisions and delivery workflows.", "bullets": ["Proposal & scope system", "Client onboarding", "Retainer / project profitability", "Follow-up & renewal workflow"], "icon": "▣", "assets": 47, "popular": false, "niche": "Scope, proposals, client delivery, retainers and renewals."}, {"name": "Translation Service", "category": "Professional Services", "desc": "Quotes, projects, language pairs and delivery tracking.", "bullets": ["Proposal & scope system", "Client onboarding", "Retainer / project profitability", "Follow-up & renewal workflow"], "icon": "◆", "assets": 48, "popular": false, "niche": "Scope, proposals, client delivery, retainers and renewals."}, {"name": "Recruitment Agency", "category": "Professional Services", "desc": "Candidates, vacancies, clients, placements and fees.", "bullets": ["Proposal & scope system", "Client onboarding", "Retainer / project profitability", "Follow-up & renewal workflow"], "icon": "◐", "assets": 49, "popular": false, "niche": "Scope, proposals, client delivery, retainers and renewals."}, {"name": "Personal Trainer", "category": "Fitness & Coaching", "desc": "Packages, clients, consultations and retention systems.", "bullets": ["Package pricing", "Client / member tracker", "Consultation & onboarding", "Retention & renewal system"], "icon": "✧", "assets": 50, "popular": true, "niche": "Packages, recurring clients, sessions and retention."}, {"name": "Online Fitness Coach", "category": "Fitness & Coaching", "desc": "Subscriptions, check-ins, programmes and retention.", "bullets": ["Package pricing", "Client / member tracker", "Consultation & onboarding", "Retention & renewal system"], "icon": "▦", "assets": 51, "popular": false, "niche": "Packages, recurring clients, sessions and retention."}, {"name": "Yoga Instructor", "category": "Fitness & Coaching", "desc": "Classes, memberships, workshops and private sessions.", "bullets": ["Package pricing", "Client / member tracker", "Consultation & onboarding", "Retention & renewal system"], "icon": "◒", "assets": 52, "popular": false, "niche": "Packages, recurring clients, sessions and retention."}, {"name": "Pilates Instructor", "category": "Fitness & Coaching", "desc": "Classes, packages, scheduling and recurring clients.", "bullets": ["Package pricing", "Client / member tracker", "Consultation & onboarding", "Retention & renewal system"], "icon": "⬡", "assets": 53, "popular": false, "niche": "Packages, recurring clients, sessions and retention."}, {"name": "Dance Instructor", "category": "Fitness & Coaching", "desc": "Classes, private lessons, workshops and performance admin.", "bullets": ["Package pricing", "Client / member tracker", "Consultation & onboarding", "Retention & renewal system"], "icon": "◍", "assets": 54, "popular": false, "niche": "Packages, recurring clients, sessions and retention."}, {"name": "Swim Coach", "category": "Fitness & Coaching", "desc": "Lessons, packages, progress admin and scheduling.", "bullets": ["Package pricing", "Client / member tracker", "Consultation & onboarding", "Retention & renewal system"], "icon": "✦", "assets": 46, "popular": false, "niche": "Packages, recurring clients, sessions and retention."}, {"name": "Running Coach", "category": "Fitness & Coaching", "desc": "Plans, coaching packages, check-ins and client retention.", "bullets": ["Package pricing", "Client / member tracker", "Consultation & onboarding", "Retention & renewal system"], "icon": "◌", "assets": 47, "popular": false, "niche": "Packages, recurring clients, sessions and retention."}, {"name": "Wellness Coach", "category": "Fitness & Coaching", "desc": "Sessions, goals, resources and recurring coaching packages.", "bullets": ["Package pricing", "Client / member tracker", "Consultation & onboarding", "Retention & renewal system"], "icon": "◈", "assets": 48, "popular": false, "niche": "Packages, recurring clients, sessions and retention."}, {"name": "Martial Arts Instructor", "category": "Fitness & Coaching", "desc": "Memberships, classes, grading admin and retention.", "bullets": ["Package pricing", "Client / member tracker", "Consultation & onboarding", "Retention & renewal system"], "icon": "↑", "assets": 49, "popular": false, "niche": "Packages, recurring clients, sessions and retention."}, {"name": "Sports Coach", "category": "Fitness & Coaching", "desc": "Private coaching, clinics, teams and seasonal programmes.", "bullets": ["Package pricing", "Client / member tracker", "Consultation & onboarding", "Retention & renewal system"], "icon": "⌁", "assets": 50, "popular": false, "niche": "Packages, recurring clients, sessions and retention."}, {"name": "Catering Business", "category": "Food & Events", "desc": "Menus, event quotes, deposits, suppliers and delivery plans.", "bullets": ["Costing & quote system", "Booking / order tracker", "Supplier & production workflow", "Deposit & event checklist"], "icon": "◎", "assets": 51, "popular": false, "niche": "Costing, bookings, suppliers, deposits and event delivery."}, {"name": "Private Chef", "category": "Food & Events", "desc": "Menus, bookings, ingredient costing and premium packages.", "bullets": ["Costing & quote system", "Booking / order tracker", "Supplier & production workflow", "Deposit & event checklist"], "icon": "◇", "assets": 52, "popular": false, "niche": "Costing, bookings, suppliers, deposits and event delivery."}, {"name": "Bakery", "category": "Food & Events", "desc": "Orders, products, costing, production and pickup schedules.", "bullets": ["Costing & quote system", "Booking / order tracker", "Supplier & production workflow", "Deposit & event checklist"], "icon": "▣", "assets": 53, "popular": false, "niche": "Costing, bookings, suppliers, deposits and event delivery."}, {"name": "Cake Business", "category": "Food & Events", "desc": "Custom orders, deposits, design approvals and production.", "bullets": ["Costing & quote system", "Booking / order tracker", "Supplier & production workflow", "Deposit & event checklist"], "icon": "◆", "assets": 54, "popular": false, "niche": "Costing, bookings, suppliers, deposits and event delivery."}, {"name": "Meal Prep Business", "category": "Food & Events", "desc": "Menus, subscriptions, orders and weekly production.", "bullets": ["Costing & quote system", "Booking / order tracker", "Supplier & production workflow", "Deposit & event checklist"], "icon": "◐", "assets": 46, "popular": false, "niche": "Costing, bookings, suppliers, deposits and event delivery."}, {"name": "Food Truck", "category": "Food & Events", "desc": "Menus, locations, events, stock and daily sales tracking.", "bullets": ["Costing & quote system", "Booking / order tracker", "Supplier & production workflow", "Deposit & event checklist"], "icon": "✧", "assets": 47, "popular": false, "niche": "Costing, bookings, suppliers, deposits and event delivery."}, {"name": "Event Planner", "category": "Food & Events", "desc": "Budgets, suppliers, timelines, clients and event checklists.", "bullets": ["Costing & quote system", "Booking / order tracker", "Supplier & production workflow", "Deposit & event checklist"], "icon": "▦", "assets": 48, "popular": true, "niche": "Costing, bookings, suppliers, deposits and event delivery."}, {"name": "Wedding Planner", "category": "Food & Events", "desc": "Packages, vendors, payments, timelines and client communication.", "bullets": ["Costing & quote system", "Booking / order tracker", "Supplier & production workflow", "Deposit & event checklist"], "icon": "◒", "assets": 49, "popular": false, "niche": "Costing, bookings, suppliers, deposits and event delivery."}, {"name": "Party Decor Business", "category": "Food & Events", "desc": "Themes, inventory, deposits, delivery and setup.", "bullets": ["Costing & quote system", "Booking / order tracker", "Supplier & production workflow", "Deposit & event checklist"], "icon": "⬡", "assets": 50, "popular": false, "niche": "Costing, bookings, suppliers, deposits and event delivery."}, {"name": "Event Hire Business", "category": "Food & Events", "desc": "Inventory, bookings, deposits, damage checks and returns.", "bullets": ["Costing & quote system", "Booking / order tracker", "Supplier & production workflow", "Deposit & event checklist"], "icon": "◍", "assets": 51, "popular": false, "niche": "Costing, bookings, suppliers, deposits and event delivery."}, {"name": "Tutor", "category": "Education & Childcare", "desc": "Lessons, packages, students, payments and progress admin.", "bullets": ["Package / fee pricing", "Student / enrolment tracker", "Schedule & attendance", "Progress & communication templates"], "icon": "✦", "assets": 52, "popular": true, "niche": "Students, classes, fees, schedules and progress communication."}, {"name": "Online Tutor", "category": "Education & Childcare", "desc": "Virtual lessons, packages, scheduling and recurring clients.", "bullets": ["Package / fee pricing", "Student / enrolment tracker", "Schedule & attendance", "Progress & communication templates"], "icon": "◌", "assets": 53, "popular": false, "niche": "Students, classes, fees, schedules and progress communication."}, {"name": "Language Teacher", "category": "Education & Childcare", "desc": "Lessons, levels, resources, packages and progress.", "bullets": ["Package / fee pricing", "Student / enrolment tracker", "Schedule & attendance", "Progress & communication templates"], "icon": "◈", "assets": 54, "popular": false, "niche": "Students, classes, fees, schedules and progress communication."}, {"name": "Music Teacher", "category": "Education & Childcare", "desc": "Lessons, students, scheduling, payments and recital admin.", "bullets": ["Package / fee pricing", "Student / enrolment tracker", "Schedule & attendance", "Progress & communication templates"], "icon": "↑", "assets": 46, "popular": false, "niche": "Students, classes, fees, schedules and progress communication."}, {"name": "Drama Teacher", "category": "Education & Childcare", "desc": "Classes, lesson plans, enrolments and performance admin.", "bullets": ["Package / fee pricing", "Student / enrolment tracker", "Schedule & attendance", "Progress & communication templates"], "icon": "⌁", "assets": 47, "popular": false, "niche": "Students, classes, fees, schedules and progress communication."}, {"name": "Dance School", "category": "Education & Childcare", "desc": "Classes, enrolments, fees, timetables and performance planning.", "bullets": ["Package / fee pricing", "Student / enrolment tracker", "Schedule & attendance", "Progress & communication templates"], "icon": "◎", "assets": 48, "popular": false, "niche": "Students, classes, fees, schedules and progress communication."}, {"name": "Coding Tutor", "category": "Education & Childcare", "desc": "Courses, lessons, projects and student progress.", "bullets": ["Package / fee pricing", "Student / enrolment tracker", "Schedule & attendance", "Progress & communication templates"], "icon": "◇", "assets": 49, "popular": false, "niche": "Students, classes, fees, schedules and progress communication."}, {"name": "After-School Programme", "category": "Education & Childcare", "desc": "Enrolments, attendance, activities and parent communication.", "bullets": ["Package / fee pricing", "Student / enrolment tracker", "Schedule & attendance", "Progress & communication templates"], "icon": "▣", "assets": 50, "popular": false, "niche": "Students, classes, fees, schedules and progress communication."}, {"name": "Daycare Business", "category": "Education & Childcare", "desc": "Enrolments, schedules, fees and parent-facing admin.", "bullets": ["Package / fee pricing", "Student / enrolment tracker", "Schedule & attendance", "Progress & communication templates"], "icon": "◆", "assets": 51, "popular": false, "niche": "Students, classes, fees, schedules and progress communication."}, {"name": "Exam Prep Service", "category": "Education & Childcare", "desc": "Packages, study plans, classes and student tracking.", "bullets": ["Package / fee pricing", "Student / enrolment tracker", "Schedule & attendance", "Progress & communication templates"], "icon": "◐", "assets": 52, "popular": false, "niche": "Students, classes, fees, schedules and progress communication."}, {"name": "Mobile Car Wash", "category": "Automotive & Mobile Services", "desc": "Routes, packages, subscriptions and customer retention.", "bullets": ["Job / package pricing", "Booking & route tracker", "Parts / service checklist", "Follow-up & repeat business"], "icon": "✧", "assets": 53, "popular": true, "niche": "Mobile bookings, routes, jobs, upsells and repeat customers."}, {"name": "Car Detailing", "category": "Automotive & Mobile Services", "desc": "Packages, bookings, upsells and before/after workflows.", "bullets": ["Job / package pricing", "Booking & route tracker", "Parts / service checklist", "Follow-up & repeat business"], "icon": "▦", "assets": 54, "popular": false, "niche": "Mobile bookings, routes, jobs, upsells and repeat customers."}, {"name": "Mobile Mechanic", "category": "Automotive & Mobile Services", "desc": "Call-outs, diagnostics admin, quotes and job tracking.", "bullets": ["Job / package pricing", "Booking & route tracker", "Parts / service checklist", "Follow-up & repeat business"], "icon": "◒", "assets": 46, "popular": false, "niche": "Mobile bookings, routes, jobs, upsells and repeat customers."}, {"name": "Tyre Fitment Service", "category": "Automotive & Mobile Services", "desc": "Bookings, stock, jobs and customer follow-up.", "bullets": ["Job / package pricing", "Booking & route tracker", "Parts / service checklist", "Follow-up & repeat business"], "icon": "⬡", "assets": 47, "popular": false, "niche": "Mobile bookings, routes, jobs, upsells and repeat customers."}, {"name": "Auto Electrician", "category": "Automotive & Mobile Services", "desc": "Diagnostics jobs, quotes, parts and work tracking.", "bullets": ["Job / package pricing", "Booking & route tracker", "Parts / service checklist", "Follow-up & repeat business"], "icon": "◍", "assets": 48, "popular": false, "niche": "Mobile bookings, routes, jobs, upsells and repeat customers."}, {"name": "Car Valet Service", "category": "Automotive & Mobile Services", "desc": "Bookings, packages, add-ons and repeat-client systems.", "bullets": ["Job / package pricing", "Booking & route tracker", "Parts / service checklist", "Follow-up & repeat business"], "icon": "✦", "assets": 49, "popular": false, "niche": "Mobile bookings, routes, jobs, upsells and repeat customers."}, {"name": "Fleet Cleaning", "category": "Automotive & Mobile Services", "desc": "B2B accounts, recurring routes, schedules and invoicing.", "bullets": ["Job / package pricing", "Booking & route tracker", "Parts / service checklist", "Follow-up & repeat business"], "icon": "◌", "assets": 50, "popular": false, "niche": "Mobile bookings, routes, jobs, upsells and repeat customers."}, {"name": "Bicycle Repair", "category": "Automotive & Mobile Services", "desc": "Repairs, parts, quotes and customer notifications.", "bullets": ["Job / package pricing", "Booking & route tracker", "Parts / service checklist", "Follow-up & repeat business"], "icon": "◈", "assets": 51, "popular": false, "niche": "Mobile bookings, routes, jobs, upsells and repeat customers."}, {"name": "Motorcycle Detailing", "category": "Automotive & Mobile Services", "desc": "Packages, bookings, upsells and client retention.", "bullets": ["Job / package pricing", "Booking & route tracker", "Parts / service checklist", "Follow-up & repeat business"], "icon": "↑", "assets": 52, "popular": false, "niche": "Mobile bookings, routes, jobs, upsells and repeat customers."}, {"name": "Windscreen Repair", "category": "Automotive & Mobile Services", "desc": "Bookings, jobs, quotes and mobile-service routes.", "bullets": ["Job / package pricing", "Booking & route tracker", "Parts / service checklist", "Follow-up & repeat business"], "icon": "⌁", "assets": 53, "popular": false, "niche": "Mobile bookings, routes, jobs, upsells and repeat customers."}, {"name": "Property Manager", "category": "Property & Hospitality", "desc": "Properties, tenants, maintenance and owner reporting.", "bullets": ["Lead / property CRM", "Booking / viewing workflow", "Owner / guest communication", "Recurring operations dashboard"], "icon": "◎", "assets": 54, "popular": false, "niche": "Leads, properties, bookings, guests and recurring operations."}, {"name": "Short-Term Rental Manager", "category": "Property & Hospitality", "desc": "Listings, turnovers, guests and owner workflows.", "bullets": ["Lead / property CRM", "Booking / viewing workflow", "Owner / guest communication", "Recurring operations dashboard"], "icon": "◇", "assets": 46, "popular": false, "niche": "Leads, properties, bookings, guests and recurring operations."}, {"name": "Estate Agent", "category": "Property & Hospitality", "desc": "Leads, listings, viewings, follow-ups and referral systems.", "bullets": ["Lead / property CRM", "Booking / viewing workflow", "Owner / guest communication", "Recurring operations dashboard"], "icon": "▣", "assets": 47, "popular": true, "niche": "Leads, properties, bookings, guests and recurring operations."}, {"name": "Airbnb Co-Host", "category": "Property & Hospitality", "desc": "Guest communication, turnovers, pricing admin and reporting.", "bullets": ["Lead / property CRM", "Booking / viewing workflow", "Owner / guest communication", "Recurring operations dashboard"], "icon": "◆", "assets": 48, "popular": false, "niche": "Leads, properties, bookings, guests and recurring operations."}, {"name": "Home Staging", "category": "Property & Hospitality", "desc": "Consultations, inventory, projects and property handover.", "bullets": ["Lead / property CRM", "Booking / viewing workflow", "Owner / guest communication", "Recurring operations dashboard"], "icon": "◐", "assets": 49, "popular": false, "niche": "Leads, properties, bookings, guests and recurring operations."}, {"name": "Property Photographer", "category": "Property & Hospitality", "desc": "Agents, shoots, delivery, packages and repeat accounts.", "bullets": ["Lead / property CRM", "Booking / viewing workflow", "Owner / guest communication", "Recurring operations dashboard"], "icon": "✧", "assets": 50, "popular": false, "niche": "Leads, properties, bookings, guests and recurring operations."}, {"name": "Moving Company", "category": "Property & Hospitality", "desc": "Quotes, bookings, crews, job checklists and follow-ups.", "bullets": ["Lead / property CRM", "Booking / viewing workflow", "Owner / guest communication", "Recurring operations dashboard"], "icon": "▦", "assets": 51, "popular": false, "niche": "Leads, properties, bookings, guests and recurring operations."}, {"name": "Storage Business", "category": "Property & Hospitality", "desc": "Units, enquiries, payments and customer admin.", "bullets": ["Lead / property CRM", "Booking / viewing workflow", "Owner / guest communication", "Recurring operations dashboard"], "icon": "◒", "assets": 52, "popular": false, "niche": "Leads, properties, bookings, guests and recurring operations."}, {"name": "Guesthouse / B&B", "category": "Property & Hospitality", "desc": "Bookings, rooms, guest communication and operations.", "bullets": ["Lead / property CRM", "Booking / viewing workflow", "Owner / guest communication", "Recurring operations dashboard"], "icon": "⬡", "assets": 53, "popular": false, "niche": "Leads, properties, bookings, guests and recurring operations."}, {"name": "Concierge Service", "category": "Property & Hospitality", "desc": "Requests, suppliers, premium clients and recurring retainers.", "bullets": ["Lead / property CRM", "Booking / viewing workflow", "Owner / guest communication", "Recurring operations dashboard"], "icon": "◍", "assets": 54, "popular": false, "niche": "Leads, properties, bookings, guests and recurring operations."}, {"name": "Web Designer", "category": "Tech & Digital", "desc": "Projects, proposals, revisions, hosting and handover.", "bullets": ["Scope & proposal system", "Project / retainer tracker", "Client approvals & reporting", "Renewal / upsell workflow"], "icon": "✦", "assets": 46, "popular": true, "niche": "Projects, retainers, approvals, reporting and recurring revenue."}, {"name": "Web Developer", "category": "Tech & Digital", "desc": "Builds, milestones, retainers and technical handover.", "bullets": ["Scope & proposal system", "Project / retainer tracker", "Client approvals & reporting", "Renewal / upsell workflow"], "icon": "◌", "assets": 47, "popular": false, "niche": "Projects, retainers, approvals, reporting and recurring revenue."}, {"name": "SEO Consultant", "category": "Tech & Digital", "desc": "Audits, retainers, reporting and client action plans.", "bullets": ["Scope & proposal system", "Project / retainer tracker", "Client approvals & reporting", "Renewal / upsell workflow"], "icon": "◈", "assets": 48, "popular": false, "niche": "Projects, retainers, approvals, reporting and recurring revenue."}, {"name": "Social Media Manager", "category": "Tech & Digital", "desc": "Retainers, content workflows, reports and renewals.", "bullets": ["Scope & proposal system", "Project / retainer tracker", "Client approvals & reporting", "Renewal / upsell workflow"], "icon": "↑", "assets": 49, "popular": true, "niche": "Projects, retainers, approvals, reporting and recurring revenue."}, {"name": "Paid Ads Specialist", "category": "Tech & Digital", "desc": "Campaign setup, retainers, reporting and client approvals.", "bullets": ["Scope & proposal system", "Project / retainer tracker", "Client approvals & reporting", "Renewal / upsell workflow"], "icon": "⌁", "assets": 50, "popular": false, "niche": "Projects, retainers, approvals, reporting and recurring revenue."}, {"name": "Email Marketing Consultant", "category": "Tech & Digital", "desc": "Campaigns, automations, retainers and reporting.", "bullets": ["Scope & proposal system", "Project / retainer tracker", "Client approvals & reporting", "Renewal / upsell workflow"], "icon": "◎", "assets": 51, "popular": false, "niche": "Projects, retainers, approvals, reporting and recurring revenue."}, {"name": "Automation Consultant", "category": "Tech & Digital", "desc": "Process audits, builds, testing and recurring support.", "bullets": ["Scope & proposal system", "Project / retainer tracker", "Client approvals & reporting", "Renewal / upsell workflow"], "icon": "◇", "assets": 52, "popular": false, "niche": "Projects, retainers, approvals, reporting and recurring revenue."}, {"name": "IT Support Business", "category": "Tech & Digital", "desc": "Tickets, devices, service plans and recurring clients.", "bullets": ["Scope & proposal system", "Project / retainer tracker", "Client approvals & reporting", "Renewal / upsell workflow"], "icon": "▣", "assets": 53, "popular": false, "niche": "Projects, retainers, approvals, reporting and recurring revenue."}, {"name": "Cybersecurity Consultancy", "category": "Tech & Digital", "desc": "Assessments, projects, reports and client admin.", "bullets": ["Scope & proposal system", "Project / retainer tracker", "Client approvals & reporting", "Renewal / upsell workflow"], "icon": "◆", "assets": 54, "popular": false, "niche": "Projects, retainers, approvals, reporting and recurring revenue."}, {"name": "App Developer", "category": "Tech & Digital", "desc": "Discovery, scope, milestones, testing and launch.", "bullets": ["Scope & proposal system", "Project / retainer tracker", "Client approvals & reporting", "Renewal / upsell workflow"], "icon": "◐", "assets": 46, "popular": false, "niche": "Projects, retainers, approvals, reporting and recurring revenue."}, {"name": "Etsy Seller", "category": "Retail & E-commerce", "desc": "Products, listings, orders, costs and promotion planning.", "bullets": ["Product margin calculator", "Inventory / order tracker", "Launch & campaign planner", "Customer retention system"], "icon": "✧", "assets": 47, "popular": false, "niche": "Products, inventory, margins, launches and customer retention."}, {"name": "Shopify Store", "category": "Retail & E-commerce", "desc": "Products, margins, campaigns and store operations.", "bullets": ["Product margin calculator", "Inventory / order tracker", "Launch & campaign planner", "Customer retention system"], "icon": "▦", "assets": 48, "popular": false, "niche": "Products, inventory, margins, launches and customer retention."}, {"name": "Online Boutique", "category": "Retail & E-commerce", "desc": "Inventory, orders, launches and customer retention.", "bullets": ["Product margin calculator", "Inventory / order tracker", "Launch & campaign planner", "Customer retention system"], "icon": "◒", "assets": 49, "popular": false, "niche": "Products, inventory, margins, launches and customer retention."}, {"name": "Print-on-Demand Business", "category": "Retail & E-commerce", "desc": "Designs, products, margins and campaign tracking.", "bullets": ["Product margin calculator", "Inventory / order tracker", "Launch & campaign planner", "Customer retention system"], "icon": "⬡", "assets": 50, "popular": false, "niche": "Products, inventory, margins, launches and customer retention."}, {"name": "Handmade Product Business", "category": "Retail & E-commerce", "desc": "Production, pricing, inventory and order workflows.", "bullets": ["Product margin calculator", "Inventory / order tracker", "Launch & campaign planner", "Customer retention system"], "icon": "◍", "assets": 51, "popular": false, "niche": "Products, inventory, margins, launches and customer retention."}, {"name": "Digital Product Seller", "category": "Retail & E-commerce", "desc": "Products, funnels, launches and customer support.", "bullets": ["Product margin calculator", "Inventory / order tracker", "Launch & campaign planner", "Customer retention system"], "icon": "✦", "assets": 52, "popular": true, "niche": "Products, inventory, margins, launches and customer retention."}, {"name": "Subscription Box Business", "category": "Retail & E-commerce", "desc": "Products, recurring orders, fulfilment and retention.", "bullets": ["Product margin calculator", "Inventory / order tracker", "Launch & campaign planner", "Customer retention system"], "icon": "◌", "assets": 53, "popular": false, "niche": "Products, inventory, margins, launches and customer retention."}, {"name": "Gift Box Business", "category": "Retail & E-commerce", "desc": "Bundles, suppliers, orders and seasonal campaigns.", "bullets": ["Product margin calculator", "Inventory / order tracker", "Launch & campaign planner", "Customer retention system"], "icon": "◈", "assets": 54, "popular": false, "niche": "Products, inventory, margins, launches and customer retention."}, {"name": "Reselling Business", "category": "Retail & E-commerce", "desc": "Sourcing, margins, inventory and sales tracking.", "bullets": ["Product margin calculator", "Inventory / order tracker", "Launch & campaign planner", "Customer retention system"], "icon": "↑", "assets": 46, "popular": false, "niche": "Products, inventory, margins, launches and customer retention."}, {"name": "Wholesale Business", "category": "Retail & E-commerce", "desc": "Accounts, orders, pricing tiers and repeat customers.", "bullets": ["Product margin calculator", "Inventory / order tracker", "Launch & campaign planner", "Customer retention system"], "icon": "⌁", "assets": 47, "popular": false, "niche": "Products, inventory, margins, launches and customer retention."}, {"name": "Electrician", "category": "Trades & Construction", "desc": "Call-outs, quotes, jobs, materials and recurring clients.", "bullets": ["Estimate & quote system", "Job / material tracker", "Project checklist", "Invoice & follow-up workflow"], "icon": "◎", "assets": 48, "popular": true, "niche": "Quotes, materials, projects, invoicing and handover."}, {"name": "Plumber", "category": "Trades & Construction", "desc": "Emergency work, quotes, jobs, materials and follow-ups.", "bullets": ["Estimate & quote system", "Job / material tracker", "Project checklist", "Invoice & follow-up workflow"], "icon": "◇", "assets": 49, "popular": false, "niche": "Quotes, materials, projects, invoicing and handover."}, {"name": "Painter", "category": "Trades & Construction", "desc": "Site visits, quotes, materials, crews and project tracking.", "bullets": ["Estimate & quote system", "Job / material tracker", "Project checklist", "Invoice & follow-up workflow"], "icon": "▣", "assets": 50, "popular": false, "niche": "Quotes, materials, projects, invoicing and handover."}, {"name": "Carpenter", "category": "Trades & Construction", "desc": "Custom jobs, measurements, materials and project milestones.", "bullets": ["Estimate & quote system", "Job / material tracker", "Project checklist", "Invoice & follow-up workflow"], "icon": "◆", "assets": 51, "popular": false, "niche": "Quotes, materials, projects, invoicing and handover."}, {"name": "Tiling Business", "category": "Trades & Construction", "desc": "Quotes, areas, materials, jobs and handover.", "bullets": ["Estimate & quote system", "Job / material tracker", "Project checklist", "Invoice & follow-up workflow"], "icon": "◐", "assets": 52, "popular": false, "niche": "Quotes, materials, projects, invoicing and handover."}, {"name": "Roofing Business", "category": "Trades & Construction", "desc": "Inspections, estimates, projects and supplier workflows.", "bullets": ["Estimate & quote system", "Job / material tracker", "Project checklist", "Invoice & follow-up workflow"], "icon": "✧", "assets": 53, "popular": false, "niche": "Quotes, materials, projects, invoicing and handover."}, {"name": "Solar Installation Business", "category": "Trades & Construction", "desc": "Leads, assessments, quotes, installations and handover.", "bullets": ["Estimate & quote system", "Job / material tracker", "Project checklist", "Invoice & follow-up workflow"], "icon": "▦", "assets": 54, "popular": false, "niche": "Quotes, materials, projects, invoicing and handover."}, {"name": "HVAC Business", "category": "Trades & Construction", "desc": "Installations, service plans, call-outs and recurring maintenance.", "bullets": ["Estimate & quote system", "Job / material tracker", "Project checklist", "Invoice & follow-up workflow"], "icon": "◒", "assets": 46, "popular": false, "niche": "Quotes, materials, projects, invoicing and handover."}, {"name": "Locksmith", "category": "Trades & Construction", "desc": "Call-outs, jobs, service areas and client tracking.", "bullets": ["Estimate & quote system", "Job / material tracker", "Project checklist", "Invoice & follow-up workflow"], "icon": "⬡", "assets": 47, "popular": false, "niche": "Quotes, materials, projects, invoicing and handover."}, {"name": "Renovation Contractor", "category": "Trades & Construction", "desc": "Quotes, budgets, milestones, subcontractors and handover.", "bullets": ["Estimate & quote system", "Job / material tracker", "Project checklist", "Invoice & follow-up workflow"], "icon": "◍", "assets": 48, "popular": false, "niche": "Quotes, materials, projects, invoicing and handover."}, {"name": "Dog Walking Business", "category": "Pet & Animal Services", "desc": "Routes, recurring clients, scheduling and payments.", "bullets": ["Package / route pricing", "Booking & client tracker", "Care / service checklist", "Rebooking & referral system"], "icon": "✦", "assets": 49, "popular": false, "niche": "Bookings, routes, care workflows and recurring customers."}, {"name": "Pet Sitting Business", "category": "Pet & Animal Services", "desc": "Bookings, pet profiles, visits and owner communication.", "bullets": ["Package / route pricing", "Booking & client tracker", "Care / service checklist", "Rebooking & referral system"], "icon": "◌", "assets": 50, "popular": false, "niche": "Bookings, routes, care workflows and recurring customers."}, {"name": "Dog Grooming Business", "category": "Pet & Animal Services", "desc": "Services, bookings, rebooking and client notes.", "bullets": ["Package / route pricing", "Booking & client tracker", "Care / service checklist", "Rebooking & referral system"], "icon": "◈", "assets": 51, "popular": true, "niche": "Bookings, routes, care workflows and recurring customers."}, {"name": "Dog Training Business", "category": "Pet & Animal Services", "desc": "Packages, sessions, progress and client follow-up.", "bullets": ["Package / route pricing", "Booking & client tracker", "Care / service checklist", "Rebooking & referral system"], "icon": "↑", "assets": 52, "popular": false, "niche": "Bookings, routes, care workflows and recurring customers."}, {"name": "Pet Photographer", "category": "Pet & Animal Services", "desc": "Packages, bookings, shoots and delivery workflows.", "bullets": ["Package / route pricing", "Booking & client tracker", "Care / service checklist", "Rebooking & referral system"], "icon": "⌁", "assets": 53, "popular": false, "niche": "Bookings, routes, care workflows and recurring customers."}, {"name": "Mobile Pet Grooming", "category": "Pet & Animal Services", "desc": "Routes, bookings, services and recurring clients.", "bullets": ["Package / route pricing", "Booking & client tracker", "Care / service checklist", "Rebooking & referral system"], "icon": "◎", "assets": 54, "popular": false, "niche": "Bookings, routes, care workflows and recurring customers."}, {"name": "Pet Treat Business", "category": "Pet & Animal Services", "desc": "Products, costing, orders and customer retention.", "bullets": ["Package / route pricing", "Booking & client tracker", "Care / service checklist", "Rebooking & referral system"], "icon": "◇", "assets": 46, "popular": false, "niche": "Bookings, routes, care workflows and recurring customers."}, {"name": "Pet Transport Service", "category": "Pet & Animal Services", "desc": "Bookings, routes, pet profiles and owner communication.", "bullets": ["Package / route pricing", "Booking & client tracker", "Care / service checklist", "Rebooking & referral system"], "icon": "▣", "assets": 47, "popular": false, "niche": "Bookings, routes, care workflows and recurring customers."}, {"name": "Horse Riding Instructor", "category": "Pet & Animal Services", "desc": "Lessons, riders, horses, schedules and packages.", "bullets": ["Package / route pricing", "Booking & client tracker", "Care / service checklist", "Rebooking & referral system"], "icon": "◆", "assets": 48, "popular": false, "niche": "Bookings, routes, care workflows and recurring customers."}, {"name": "Pet Waste Removal", "category": "Pet & Animal Services", "desc": "Routes, subscriptions, customers and recurring billing admin.", "bullets": ["Package / route pricing", "Booking & client tracker", "Care / service checklist", "Rebooking & referral system"], "icon": "◐", "assets": 49, "popular": false, "niche": "Bookings, routes, care workflows and recurring customers."}, {"name": "Physiotherapy Practice", "category": "Health & Care Practices", "desc": "Bookings, client admin, service packages and operations.", "bullets": ["Practice admin dashboard", "Booking & enquiry workflow", "Client communication templates", "Operations & service tracking"], "icon": "✧", "assets": 50, "popular": false, "niche": "Operational and administrative systems for professional practices; not clinical advice."}, {"name": "Occupational Therapy Practice", "category": "Health & Care Practices", "desc": "Referrals, scheduling, client admin and practice workflows.", "bullets": ["Practice admin dashboard", "Booking & enquiry workflow", "Client communication templates", "Operations & service tracking"], "icon": "▦", "assets": 51, "popular": false, "niche": "Operational and administrative systems for professional practices; not clinical advice."}, {"name": "Speech Therapy Practice", "category": "Health & Care Practices", "desc": "Bookings, referrals, client admin and operations.", "bullets": ["Practice admin dashboard", "Booking & enquiry workflow", "Client communication templates", "Operations & service tracking"], "icon": "◒", "assets": 52, "popular": false, "niche": "Operational and administrative systems for professional practices; not clinical advice."}, {"name": "Dental Practice", "category": "Health & Care Practices", "desc": "Patient-facing admin, bookings, reminders and practice operations.", "bullets": ["Practice admin dashboard", "Booking & enquiry workflow", "Client communication templates", "Operations & service tracking"], "icon": "⬡", "assets": 53, "popular": false, "niche": "Operational and administrative systems for professional practices; not clinical advice."}, {"name": "Home Care Agency", "category": "Health & Care Practices", "desc": "Clients, carers, schedules and service administration.", "bullets": ["Practice admin dashboard", "Booking & enquiry workflow", "Client communication templates", "Operations & service tracking"], "icon": "◍", "assets": 54, "popular": false, "niche": "Operational and administrative systems for professional practices; not clinical advice."}, {"name": "Mental Health Practice", "category": "Health & Care Practices", "desc": "Bookings, enquiries, admin and practice operations.", "bullets": ["Practice admin dashboard", "Booking & enquiry workflow", "Client communication templates", "Operations & service tracking"], "icon": "✦", "assets": 46, "popular": false, "niche": "Operational and administrative systems for professional practices; not clinical advice."}, {"name": "Chiropractic Practice", "category": "Health & Care Practices", "desc": "Bookings, client admin and recurring practice workflows.", "bullets": ["Practice admin dashboard", "Booking & enquiry workflow", "Client communication templates", "Operations & service tracking"], "icon": "◌", "assets": 47, "popular": false, "niche": "Operational and administrative systems for professional practices; not clinical advice."}, {"name": "Optometry Practice", "category": "Health & Care Practices", "desc": "Appointments, customer admin and practice operations.", "bullets": ["Practice admin dashboard", "Booking & enquiry workflow", "Client communication templates", "Operations & service tracking"], "icon": "◈", "assets": 48, "popular": false, "niche": "Operational and administrative systems for professional practices; not clinical advice."}, {"name": "Medical Aesthetics Clinic", "category": "Health & Care Practices", "desc": "Consultation admin, bookings, packages and client communication.", "bullets": ["Practice admin dashboard", "Booking & enquiry workflow", "Client communication templates", "Operations & service tracking"], "icon": "↑", "assets": 49, "popular": false, "niche": "Operational and administrative systems for professional practices; not clinical advice."}, {"name": "Wellness Clinic", "category": "Health & Care Practices", "desc": "Services, bookings, memberships and operational admin.", "bullets": ["Practice admin dashboard", "Booking & enquiry workflow", "Client communication templates", "Operations & service tracking"], "icon": "⌁", "assets": 50, "popular": false, "niche": "Operational and administrative systems for professional practices; not clinical advice."}, {"name": "Fashion Stylist", "category": "Fashion & Personal Services", "desc": "Clients, packages, wardrobes, shoots and referrals.", "bullets": ["Package / product pricing", "Client / order tracker", "Fitting / project workflow", "Referral & promotion system"], "icon": "◎", "assets": 51, "popular": false, "niche": "Clients, products, fittings, projects and repeat business."}, {"name": "Personal Shopper", "category": "Fashion & Personal Services", "desc": "Bookings, budgets, client preferences and packages.", "bullets": ["Package / product pricing", "Client / order tracker", "Fitting / project workflow", "Referral & promotion system"], "icon": "◇", "assets": 52, "popular": false, "niche": "Clients, products, fittings, projects and repeat business."}, {"name": "Tailor & Alterations", "category": "Fashion & Personal Services", "desc": "Garments, fittings, jobs, deposits and deadlines.", "bullets": ["Package / product pricing", "Client / order tracker", "Fitting / project workflow", "Referral & promotion system"], "icon": "▣", "assets": 53, "popular": false, "niche": "Clients, products, fittings, projects and repeat business."}, {"name": "Clothing Brand", "category": "Fashion & Personal Services", "desc": "Products, launches, inventory and campaign planning.", "bullets": ["Package / product pricing", "Client / order tracker", "Fitting / project workflow", "Referral & promotion system"], "icon": "◆", "assets": 54, "popular": false, "niche": "Clients, products, fittings, projects and repeat business."}, {"name": "Jewellery Brand", "category": "Fashion & Personal Services", "desc": "Products, costing, orders and launch workflows.", "bullets": ["Package / product pricing", "Client / order tracker", "Fitting / project workflow", "Referral & promotion system"], "icon": "◐", "assets": 46, "popular": false, "niche": "Clients, products, fittings, projects and repeat business."}, {"name": "Sneaker Reselling Business", "category": "Fashion & Personal Services", "desc": "Sourcing, inventory, margins and sales tracking.", "bullets": ["Package / product pricing", "Client / order tracker", "Fitting / project workflow", "Referral & promotion system"], "icon": "✧", "assets": 47, "popular": false, "niche": "Clients, products, fittings, projects and repeat business."}, {"name": "Wardrobe Organiser", "category": "Fashion & Personal Services", "desc": "Consultations, packages, projects and client referrals.", "bullets": ["Package / product pricing", "Client / order tracker", "Fitting / project workflow", "Referral & promotion system"], "icon": "▦", "assets": 48, "popular": false, "niche": "Clients, products, fittings, projects and repeat business."}, {"name": "Bridal Boutique", "category": "Fashion & Personal Services", "desc": "Appointments, fittings, orders and client follow-up.", "bullets": ["Package / product pricing", "Client / order tracker", "Fitting / project workflow", "Referral & promotion system"], "icon": "◒", "assets": 49, "popular": false, "niche": "Clients, products, fittings, projects and repeat business."}, {"name": "Costume Designer", "category": "Fashion & Personal Services", "desc": "Projects, fittings, budgets and production deadlines.", "bullets": ["Package / product pricing", "Client / order tracker", "Fitting / project workflow", "Referral & promotion system"], "icon": "⬡", "assets": 50, "popular": false, "niche": "Clients, products, fittings, projects and repeat business."}, {"name": "Uniform Supplier", "category": "Fashion & Personal Services", "desc": "B2B accounts, quotes, sizes, orders and repeat business.", "bullets": ["Package / product pricing", "Client / order tracker", "Fitting / project workflow", "Referral & promotion system"], "icon": "◍", "assets": 51, "popular": false, "niche": "Clients, products, fittings, projects and repeat business."}];
+    const BUSINESS_TYPES = window.BIZSTACKS_CATALOG;
     function showBusinessStudio() {
       if (window.location.hash !== "#toolkit") return;
       const studio = document.getElementById("toolkit");
@@ -784,7 +705,7 @@
         desc:"A flexible service-business operating system.",
         niche:"A flexible service-business foundation.",
         bullets:["Pricing & offer system","Client CRM","Sales & follow-up","Operations dashboard"],
-        icon:"✦", assets:48, popular:false
+        icon:"✦", popular:false
       };
     }
 
@@ -833,7 +754,7 @@
             <h3>${escapeHtml(b.name)}</h3>
             <p>${escapeHtml(b.desc)}</p>
             <ul>${b.bullets.map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul>
-            <div class="box-foot"><strong>${b.assets} premium assets</strong><button class="btn small business-preview" data-business="${escapeHtml(b.name)}">Preview →</button></div>
+            <div class="box-foot"><strong>Quotes, checklists & trackers</strong><button class="btn small business-preview" data-business="${escapeHtml(b.name)}">View workspace →</button></div>
           </article>`).join("");
       }
       if(loadMore) loadMore.style.display=(fullCatalogOpen || matches.length>visibleBusinessLimit)?"inline-block":"none";
@@ -841,29 +762,19 @@
 
     function previewBusiness(name) {
       const b=businessByName(name);
+      const target="/dashboard.html?business="+encodeURIComponent(b.name);
       openModal(b.name,`
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
-          <span class="premium-badge">${escapeHtml(b.category)}</span>
-          <span class="premium-badge">${b.assets} PREMIUM ASSETS</span>
-        </div>
         <p>${escapeHtml(b.desc)}</p>
         <div class="stack-list">
-          ${b.bullets.map((x,i)=>`<div class="stack-item"><span class="stack-icon">${i+1}</span><div><strong>${escapeHtml(x)}</strong><small>Configured specifically for ${escapeHtml(b.name.toLowerCase())} workflows.</small></div></div>`).join("")}
+          ${b.bullets.map((x,i)=>`<div class="stack-item"><span class="stack-icon">${i+1}</span><div><strong>${escapeHtml(x)}</strong></div></div>`).join("")}
         </div>
-        <div class="quality-strip"><span class="check">✓</span><div><strong>Includes the full BusinessBox engine</strong><p>Pricing, CRM, documents, sales, operations, finance, research, launch planning and monthly review tools are adapted around this niche.</p></div></div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px">
-          <button class="btn primary" onclick="document.getElementById('pricing').scrollIntoView();closeModal()">Choose a plan</button>
-          <button class="btn" onclick="document.getElementById('pricing').scrollIntoView();closeModal()">See pricing</button>
-        </div>`);
+        <p>Start with editable templates based on your business category. Save your work, reopen it later, and print or download it. Trackers are manual; they do not send messages or process payments.</p>
+        <p>Free includes 1 business and 2 of each record type. Business includes 3 businesses and 10 of each type per business. Pro has unlimited records.</p>
+        <a class="btn primary" href="${escapeHtml(target)}">Open this business</a>
+        <a class="btn" href="#pricing" onclick="closeModal()">Compare plans</a>`);
     }
 
-    function selectBusinessAndConfigure(name) {
-      const select=document.getElementById("cfgIndustry");
-      if(select) select.value=name;
-      closeModal();
-      document.getElementById("configure").scrollIntoView();
-      buildBox();
-    }
+    function selectBusinessAndConfigure(name) { location.href="/dashboard.html?business="+encodeURIComponent(name); }
 
     document.addEventListener("click",e=>{
       const chip=e.target.closest("[data-business-category]");
@@ -906,78 +817,6 @@
     renderBusinessCategories();
     renderBusinesses();
 
-
-    const assets = [
-      ["strategy","Market Research Brief","Define audience, decision, scope, horizon and research questions before collecting data."],
-      ["strategy","Competitor Universe Map","Group competitors by category, positioning or business model."],
-      ["strategy","Positioning White-Space Worksheet","Turn competitor patterns into credible gaps and opportunities."],
-      ["strategy","Business Plan Architect","Audience-specific structure, assumptions and missing-information checklist."],
-      ["strategy","Risk & Assumption Register","Pressure-test commercial assumptions before they become promises."],
-      ["strategy","Offer Positioning System","Define buyer, problem, outcome, boundaries and premium delivery format."],
-      ["strategy","Soft Launch Planner","Test pricing, positioning and delivery with a focused low-friction launch."],
-      ["strategy","Quarterly Strategy Review","Turn learning into a repeatable review loop."],
-      ["finance","Profit & Pricing Calculator","Margin-aware pricing for services and jobs."],
-      ["finance","Income & Expense Dashboard","Monthly operating view with categories."],
-      ["finance","Cash Flow Planner","Plan expected cash in and cash out."],
-      ["finance","Package Profit Builder","Compare package price, cost and margin."],
-      ["finance","Break-even Calculator","See how many jobs or clients cover fixed costs."],
-      ["finance","Invoice Template","Professional editable client invoice."],
-      ["sales","WhatsApp Sales Scripts","First-contact, follow-up and reactivation messages."],
-      ["sales","Cold DM Scripts","Short social outreach for service businesses."],
-      ["sales","Email Outreach Pack","Prospecting, quote follow-up and nurture emails."],
-      ["sales","Objection Response Bank","Price, timing, trust and comparison objections."],
-      ["sales","Closing Scripts","Simple close options without aggressive pressure."],
-      ["sales","Referral Request System","Ask happy customers for introductions."],
-      ["documents","Modular Proposal System","Reusable cover, context, scope, deliverables, timeline, pricing, assumptions and acceptance."],
-      ["documents","Contract Scope Framework","Plain-language structure for boundaries, payment logic and responsibilities."],
-      ["documents","Assumptions & Exclusions Pack","Reduce scope confusion with clear client-facing boundaries."],
-      ["documents","Client Document Style Guide","Keep headings, placeholders, language and layout consistent."],
-      ["documents","Audience Variant Pack","Adapt the same core plan or proposal for different decision-makers."],
-      ["documents","Document Quality Checklist","Check clarity, logic, scannability, missing clauses and review requirements."],
-      ["client","Client CRM","Lead, customer, status and next-action tracking."],
-      ["client","Lead Pipeline","New lead → contacted → quote → won/lost."],
-      ["client","Client Intake Form","Collect details before the work starts."],
-      ["client","Booking / Job Tracker","Upcoming work, dates, values and status."],
-      ["client","Review Request Pack","Messages for requesting public reviews."],
-      ["client","Client Offboarding Checklist","Close projects cleanly and protect referrals."],
-      ["marketing","30-Day Content Calendar","A structured month of useful content ideas."],
-      ["marketing","Caption Frameworks","Hooks, proof, education, CTA and offer posts."],
-      ["marketing","Promotion Planner","Plan offers without discounting everything."],
-      ["marketing","Website Copy Builder","Homepage, service, about and CTA prompts."],
-      ["marketing","Google Business Profile Checklist","A practical local visibility setup checklist."],
-      ["marketing","Offer Positioning Worksheet","Clarify audience, problem, outcome and proof."],
-      ["growth","Conversion Email System","Reusable campaign modules, subject lines, preheaders and CTA patterns."],
-      ["growth","Customer Resource Engine","Plan useful downloads, how-to guides and FAQs that support your paid offer."],
-      ["growth","Lead Magnet Planner","Create traffic-driving resources without giving away the entire paid solution."],
-      ["growth","FAQ Builder","Turn recurring customer questions into trust-building website content."],
-      ["growth","Bundle Expansion Planner","Turn one successful product into a coherent family of higher-value bundles."],
-      ["growth","Monthly Growth Review","Review leads, conversion, revenue, time and next experiments."],
-      ["ops","30-Day Launch Plan","Week-by-week startup priorities."],
-      ["ops","Weekly CEO Dashboard","Focus metrics, priorities and blockers."],
-      ["ops","Service Delivery Checklist","Repeatable quality-control workflow."],
-      ["ops","Standard Operating Procedure Template","Document repeatable business processes."],
-      ["ops","Monthly Goal Tracker","Revenue, leads, clients and operational goals."],
-      ["ops","Customer Experience Checklist","Map enquiry through completion and follow-up."],
-      ["ops","Business Launch Checklist","A clean master checklist for launch readiness."],
-      ["ops","Quarterly Review Template","Review performance, bottlenecks and next bets."]
-    ];
-
-    const assetGrid = document.getElementById("assetGrid");
-    function renderAssets(filter="all"){
-      assetGrid.innerHTML = assets.filter(a=>filter==="all"||a[0]===filter).map(a=>`
-        <article class="asset">
-          <div style="display:flex;justify-content:space-between;gap:8px;align-items:center">
-            <span class="type">${a[0]}</span><span class="premium-badge">PREMIUM</span>
-          </div>
-          <h3>${a[1]}</h3><p>${a[2]}</p>
-        </article>`).join("");
-    }
-    renderAssets();
-
-    document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{
-      document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
-      btn.classList.add("active");renderAssets(btn.dataset.filter);
-    }));
 
     document.querySelectorAll(".tab").forEach(tab=>tab.addEventListener("click",()=>{
       document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
@@ -1103,35 +942,6 @@ BUSINESS: ${ind}`;
     }
 
 
-    function buildBox(){
-      const industry=document.getElementById("cfgIndustry").value;
-      const stage=document.getElementById("cfgStage").value;
-      const priority=document.getElementById("cfgPriority").value;
-      const stageMap={
-        idea:["Offer & Market Clarity","Research brief, offer positioning and a simple financial model before you build too much."],
-        launch:["Launch & Conversion System","Pricing, proposal, outreach, client intake and a 30-day launch cadence."],
-        trading:["Operating Control System","CRM, profit dashboard, follow-up alerts, client documents and monthly review."],
-        scale:["Scale & Standardisation System","Reusable SOPs, multi-channel growth, reporting, delegation-ready documents and review loops."]
-      };
-      const priorityMap={
-        customers:["Lead Pipeline + Sales System","Outreach, follow-up, email campaigns, review requests and referral workflows."],
-        pricing:["Pricing + Profit System","Margin pricing, package profit, break-even logic and budget stress-testing."],
-        systems:["Operations Command Centre","CRM, jobs, recurring tasks, settings, alerts, SOPs and dashboard reporting."],
-        documents:["Professional Document Suite","Proposal, quote, invoice, intake, assumptions/exclusions and client communication."],
-        research:["Research + Positioning Studio","Research brief, competitor universe, white-space analysis and assumption checks."],
-        growth:["Growth System","Lead magnets, customer resources, email campaigns, referral flows and monthly experiments."]
-      };
-      const business=businessByName(industry);
-      const a=stageMap[stage], b=priorityMap[priority];
-      document.getElementById("cfgTitle").textContent=`${industry}: ${a[0]}`;
-      document.getElementById("cfgSummary").textContent=`${business.niche} Your priority layer is ${b[0].toLowerCase()}.`;
-      document.getElementById("cfgStack").innerHTML=`
-        <div class="stack-item"><span class="stack-icon">1</span><div><strong>${escapeHtml(a[0])}</strong><small>${escapeHtml(a[1])}</small></div></div>
-        <div class="stack-item"><span class="stack-icon">2</span><div><strong>${escapeHtml(b[0])}</strong><small>${escapeHtml(b[1])}</small></div></div>
-        <div class="stack-item"><span class="stack-icon">3</span><div><strong>Monthly Review Loop</strong><small>Track what changed, what worked and the next highest-value action.</small></div></div>`;
-      document.getElementById("cfgPlan").textContent="Free: 1 business — R0 · Business: 3 businesses — R297/month";
-    }
-
     function buildOffer(){
       const buyer=document.getElementById("ofBuyer").value.trim();
       const problem=document.getElementById("ofProblem").value.trim();
@@ -1241,7 +1051,8 @@ BUSINESS: ${ind}`;
     // ============================================================
     // REAL SUPABASE AUTH
     // ============================================================
-    const AUTH_REDIRECT = () => `${window.location.origin}/dashboard.html`;
+    const requestedBusiness=new URLSearchParams(window.location.search).get("business")||"";
+    const AUTH_REDIRECT = () => `${window.location.origin}/dashboard.html${requestedBusiness?"?business="+encodeURIComponent(requestedBusiness):""}`;
     const RESET_REDIRECT = () => `${window.location.origin}/reset-password.html`;
 
     function authConfigured(){
@@ -1261,7 +1072,7 @@ BUSINESS: ${ind}`;
 
     function openSignupModal(){
       openModal("Create your account", `
-        <p>Create your free BizStacks account and get full access to one business model. No payment required.</p>
+        <p>Create one free business workspace with 2 of each record type and editable templates. No payment required.</p>
         <div class="auth-form">
           <div class="auth-row">
             <label for="signupName">Full name</label>
@@ -1320,7 +1131,7 @@ BUSINESS: ${ind}`;
 
       if(data?.session){
         setAuthMessage("signupMessage","Account created. Opening your dashboard…","success");
-        setTimeout(()=>window.location.href="/dashboard.html",650);
+        setTimeout(()=>window.location.href=AUTH_REDIRECT(),650);
       }else{
         setAuthMessage("signupMessage","Account created. Check your email and click the confirmation link.","success");
         if(btn){btn.textContent="Check your email";btn.disabled=true}
@@ -1376,7 +1187,7 @@ BUSINESS: ${ind}`;
       }
 
       setAuthMessage("loginMessage","Logged in. Opening your dashboard…","success");
-      setTimeout(()=>window.location.href="/dashboard.html",450);
+      setTimeout(()=>window.location.href=AUTH_REDIRECT(),450);
     }
 
     function openForgotPasswordModal(){
@@ -1452,7 +1263,7 @@ BUSINESS: ${ind}`;
         document.querySelectorAll('[data-open="signup"]').forEach(btn=>{
           btn.textContent="Open dashboard";
           btn.removeAttribute("data-open");
-          btn.onclick=()=>window.location.href="/dashboard.html";
+          btn.onclick=()=>window.location.href=AUTH_REDIRECT();
         });
       }
 
@@ -1468,19 +1279,15 @@ BUSINESS: ${ind}`;
     function closeModal(){modal.classList.remove("open")}
     document.getElementById("closeModal").onclick=closeModal;modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
 
-    document.querySelectorAll("[data-box]").forEach(b=>b.addEventListener("click",()=>{
-      const name=b.dataset.box;
-      openModal(name,`<p><b style="color:#f8f2e4">${name}</b> is already represented in the product structure. For production, connect this preview to either a dedicated product page/modal or directly to your one-time checkout.</p><p>This build intentionally avoids fake payment processing.</p><button class="btn primary" onclick="document.getElementById('pricing').scrollIntoView();closeModal()">See membership</button>`);
-    }));
     document.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>{
       if(b.dataset.open==="login"){openLoginModal();return}
       if(b.dataset.open==="signup"){openSignupModal();return}
     }));
 
     document.querySelectorAll(".checkout").forEach(btn=>btn.addEventListener("click",()=>{
-      const plan=btn.dataset.plan, link=CHECKOUT_LINKS[plan];
+      const plan=btn.dataset.plan, annual=document.getElementById("billingSwitch").classList.contains("on"), link=CHECKOUT_LINKS[plan+(annual?"Annual":"")];
       if(link){window.location.href=link}
-      else openModal("Connect your checkout",`<p>Your <b>${plan==="business"?"R297/month Business":"R597/month Business Pro"}</b> button is ready.</p><p>Paste your hosted subscription checkout URL into <code>CHECKOUT_LINKS.${plan}</code> near the bottom of this HTML file.</p><p class="tiny">Use only public checkout/payment links here. Never paste a secret API key into front-end code.</p>`);
+      else openModal("Paid upgrades are not open yet",`<p>You can use the Free plan now. Business and Pro checkout will be available once billing is connected.</p><a class="btn primary" href="/dashboard.html">Open free workspace</a>`);
     }));
 
     const billingSwitch=document.getElementById("billingSwitch");
@@ -1495,6 +1302,7 @@ BUSINESS: ${ind}`;
     document.getElementById("year").textContent=new Date().getFullYear();
     calcPrice();
     updateHomepageAuthState();
+    if(new URLSearchParams(window.location.search).get("auth")==="login") openLoginModal();
   </script>
 </body>
 </html>
