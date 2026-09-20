@@ -35,17 +35,21 @@ button,input,select,textarea{font:inherit}.shell{min-height:100vh}.topbar{height
           <h1 id="welcomeTitle">Welcome back.</h1>
           <p class="muted">Your business data is protected by your Supabase account and row-level security.</p>
         </div>
-        <span class="plan" id="planBadge">Preview</span>
+        <span class="plan" id="planBadge">Free</span>
       </div>
 
       <div class="business-bar">
         <select id="businessSelect" onchange="selectBusiness(this.value)"></select>
-        <button class="btn primary" onclick="openCreateBusiness()">+ Add business</button>
+        <button class="btn primary" id="addBusinessBtn" onclick="openCreateBusiness()">+ Add business</button>
+        <a class="btn" href="/#toolkit">Business tools</a>
+        <a class="btn" href="/#pricing">View plans</a>
       </div>
+
+      <p id="planUsage" class="muted" role="status"></p>
 
       <div id="noBusiness" class="card hidden">
         <h2 style="margin-top:0">Create your first business</h2>
-        <p class="muted">Add a business before saving clients, leads, jobs, invoices or expenses.</p>
+        <p class="muted">Create a business with full access to clients, leads, jobs, invoices, expenses and the business tools.</p>
         <button class="btn primary" onclick="openCreateBusiness()">Create business</button>
       </div>
 
@@ -95,6 +99,40 @@ button,input,select,textarea{font:inherit}.shell{min-height:100vh}.topbar{height
 let currentUser=null;
 let currentBusinessId=null;
 let businesses=[];
+let currentPlan="free";
+let planReady=false;
+let creatingBusiness=false;
+const PLAN_RULES={
+  free:{name:"Free",limit:1},
+  business:{name:"Business",limit:3},
+  pro:{name:"Business Pro",limit:Infinity}
+};
+function resolvePlan(subscription){
+  const plan=String(subscription?.plan||"free").toLowerCase();
+  const status=String(subscription?.status||"").toLowerCase();
+  return ["active","trialing"].includes(status) && ["business","pro"].includes(plan) ? plan : "free";
+}
+function canAddBusiness(){return planReady && businesses.length<PLAN_RULES[currentPlan].limit;}
+function renderPlan(){
+  const rule=PLAN_RULES[currentPlan];
+  document.getElementById("planBadge").textContent=rule.name;
+  document.getElementById("planUsage").textContent=!planReady
+    ? "We could not check your plan. Refresh the page before adding a business."
+    : `${rule.name}: ${businesses.length}${Number.isFinite(rule.limit)?" of "+rule.limit:""} business${businesses.length===1?"":"es"} added. Full access to all business tools.`;
+  document.getElementById("addBusinessBtn").textContent=planReady && !canAddBusiness()?"Business limit reached":"+ Add business";
+}
+async function refreshPlan(){
+  const {data,error}=await window.supabaseClient.from("subscriptions").select("plan,status").eq("user_id",currentUser.id).maybeSingle();
+  planReady=!error;
+  if(!error) currentPlan=resolvePlan(data);
+  renderPlan();
+  return planReady;
+}
+function showPlanLimit(){
+  if(!planReady){openModal("Plan unavailable",'<p>We could not check your plan. Refresh the page and try again.</p>');return;}
+  const rule=PLAN_RULES[currentPlan];
+  openModal("Business limit reached",`<p>Your ${esc(rule.name)} plan includes ${rule.limit} business model${rule.limit===1?"":"s"}, with full access to the tools for each business.</p><p>${currentPlan==="free"?"Business includes up to 3 business models for R297/month.":"Business Pro includes all 150 BusinessBoxes and more business workspaces."}</p><a class="btn primary" href="/#pricing">View plans</a>`);
+}
 
 const money=n=>"R "+Number(n||0).toLocaleString("en-ZA",{maximumFractionDigits:2});
 const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
@@ -119,15 +157,14 @@ async function boot(){
   document.getElementById("userEmail").textContent=user.email||"";
   document.getElementById("appContent").classList.remove("hidden");
 
-  const [{data:profile},{data:subscription}] = await Promise.all([
+  const [{data:profile}] = await Promise.all([
     window.supabaseClient.from("profiles").select("full_name").eq("id",user.id).maybeSingle(),
-    window.supabaseClient.from("subscriptions").select("plan,status").eq("user_id",user.id).maybeSingle()
+    refreshPlan()
   ]);
 
   const name=profile?.full_name || user.user_metadata?.full_name || user.email?.split("@")[0] || "there";
   document.getElementById("welcomeTitle").textContent=`Welcome, ${name}.`;
-  const plan=(subscription?.plan||"preview");
-  document.getElementById("planBadge").textContent=plan==="pro"?"Business Pro":plan==="business"?"Business":"Preview";
+
 
   await loadBusinesses();
 }
@@ -141,6 +178,7 @@ async function loadBusinesses(){
   const {data,error}=await window.supabaseClient
     .from("businesses")
     .select("id,name,business_type,stage")
+    .eq("user_id",currentUser.id)
     .order("created_at",{ascending:true});
 
   if(error){
@@ -149,9 +187,11 @@ async function loadBusinesses(){
   }
 
   businesses=data||[];
+  renderPlan();
   const select=document.getElementById("businessSelect");
 
   if(!businesses.length){
+    currentBusinessId=null;
     select.innerHTML='<option value="">No business yet</option>';
     document.getElementById("noBusiness").classList.remove("hidden");
     document.getElementById("businessContent").classList.add("hidden");
@@ -175,6 +215,7 @@ async function selectBusiness(id){
 }
 
 function openCreateBusiness(){
+  if(!canAddBusiness()){showPlanLimit();return;}
   openModal("Add business",`
     <div class="form">
       <label>Business name<input id="newBusinessName" placeholder="e.g. Cape Clean Co."></label>
@@ -186,18 +227,33 @@ function openCreateBusiness(){
 }
 
 async function createBusiness(){
+  if(creatingBusiness) return;
+  if(!canAddBusiness()){showPlanLimit();return;}
   const name=document.getElementById("newBusinessName").value.trim();
   const business_type=document.getElementById("newBusinessType").value.trim();
   const stage=document.getElementById("newBusinessStage").value;
   if(!name || !business_type){msg("businessMessage","Enter the business name and type.","error");return}
   const btn=document.getElementById("createBusinessBtn");btn.disabled=true;
-  const {data,error}=await window.supabaseClient.from("businesses").insert({
-    user_id:currentUser.id,name,business_type,stage
-  }).select("id").single();
-  if(error){msg("businessMessage",error.message,"error");btn.disabled=false;return}
-  localStorage.setItem("bizstacks_business_id",data.id);
-  closeModal();
-  await loadBusinesses();
+  creatingBusiness=true;
+  try{
+    // Recheck after the form opens in case the subscription or another tab changed.
+    if(!await refreshPlan()){msg("businessMessage","Could not check your plan. Please try again.","error");return;}
+    const {count,error:countError}=await window.supabaseClient.from("businesses").select("id",{count:"exact",head:true}).eq("user_id",currentUser.id);
+    if(countError) throw countError;
+    if(count>=PLAN_RULES[currentPlan].limit){showPlanLimit();return;}
+    const {data,error}=await window.supabaseClient.from("businesses").insert({
+      user_id:currentUser.id,name,business_type,stage
+    }).select("id").single();
+    if(error) throw error;
+    localStorage.setItem("bizstacks_business_id",data.id);
+    closeModal();
+    await loadBusinesses();
+  }catch(error){
+    msg("businessMessage",error.message||"Could not create your business. Please try again.","error");
+  }finally{
+    creatingBusiness=false;
+    btn.disabled=false;
+  }
 }
 
 function openEntity(kind){
